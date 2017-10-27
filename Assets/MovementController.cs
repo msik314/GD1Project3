@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(MovementRecord))]
 public class MovementController : MonoBehaviour
 {
     [SerializeField] private float maxSpeed;
@@ -17,6 +18,7 @@ public class MovementController : MonoBehaviour
     
     private Vector3 targetVel;
     private Rigidbody rb;
+    private MovementRecord record;
     private bool grounded;
     private bool jumping;
     private float jumpVel;
@@ -25,6 +27,7 @@ public class MovementController : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        record = GetComponent<MovementRecord>();
         jumpVel = Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * jumpHeight);
         grounded = false;
         targetVel = Vector3.zero;
@@ -57,6 +60,8 @@ public class MovementController : MonoBehaviour
         {
             targetVel = transform.rotation * targetVel;
         }
+        
+        record.addTarget(targetVel, transform.rotation);
         
         Vector3 difference = new Vector3(targetVel.x - rb.velocity.x, 0, targetVel.z - rb.velocity.z);
         
