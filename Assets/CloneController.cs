@@ -4,7 +4,8 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(MovementRecord))]
-public class MovementController : MonoBehaviour
+
+public class CloneController : MonoBehaviour
 {
     [SerializeField] private float maxSpeed;
     [SerializeField] private float lookSensitivity;
@@ -16,12 +17,10 @@ public class MovementController : MonoBehaviour
     [SerializeField] private float castRadius;
     [SerializeField] private LayerMask castMask;
     
-    private Vector3 targetVel;
-    private Rigidbody rb;
-    private MovementRecord record;
-    private bool grounded;
-    private bool jumping;
     private float jumpVel;
+    private bool grounded;
+    private MovementRecord record;
+    private Rigidbody rb;
     
     // Use this for initialization
     void Awake()
@@ -30,38 +29,16 @@ public class MovementController : MonoBehaviour
         record = GetComponent<MovementRecord>();
         jumpVel = Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * jumpHeight);
         grounded = false;
-        targetVel = Vector3.zero;
     }
     
     // Update is called once per frame
-    void Update()
-    {
-        targetVel = maxSpeed * new Vector3(Input.GetAxis("Sideways"), 0, Input.GetAxis("Forward"));
-        if(targetVel.sqrMagnitude > maxSpeed)
-        {
-            targetVel = maxSpeed * targetVel.normalized;
-        }
-        
-        if(grounded && Input.GetButton("Jump"))
-        {
-            jumping = true;
-        }
-        else
-        {
-            jumping = false;
-        }
-        
-        transform.Rotate(0, lookSensitivity * Input.GetAxisRaw("MouseX") * Time.deltaTime, 0);
-    }
-    
     void FixedUpdate()
     {
-        if(targetVel.sqrMagnitude > Mathf.Epsilon)
-        {
-            targetVel = transform.rotation * targetVel;
-        }
         
-        record.addTarget(targetVel, transform.rotation, jumping);
+        Vector3 targetVel;
+        Quaternion rot;
+        bool jumping = record.getTarget(out targetVel, out rot);
+        transform.rotation = rot;
         
         Vector3 difference = new Vector3(targetVel.x - rb.velocity.x, 0, targetVel.z - rb.velocity.z);
         

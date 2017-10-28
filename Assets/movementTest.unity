@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 29606114}
   - component: {fileID: 29606113}
   - component: {fileID: 29606118}
+  - component: {fileID: 29606119}
   m_Layer: 10
   m_Name: Capsule
   m_TagString: Player
@@ -237,6 +238,17 @@ MonoBehaviour:
   castMask:
     serializedVersion: 2
     m_Bits: 257
+--- !u!114 &29606119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 29606112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 276e8bff4cfde714993993bc14ffb7b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1221473126
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,13 +341,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1221473126}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.08715578, y: 0, z: 0, w: 0.9961947}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
 --- !u!1 &1319151631
 GameObject:
   m_ObjectHideFlags: 0
