@@ -98,7 +98,7 @@ public class MovementController : MonoBehaviour
         if(grounded && jumping)
         {
             grounded = false;
-            rb.AddForce(Vector3.up * jumpVel, ForceMode.VelocityChange);
+            rb.AddForce(Vector3.up * (jumpVel - rb.velocity.y), ForceMode.VelocityChange);
         }
     }
     

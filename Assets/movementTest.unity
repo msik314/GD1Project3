@@ -230,8 +230,8 @@ MonoBehaviour:
   maxSpeed: 10
   lookSensitivity: 8
   physicsCutoff: 0.5
-  maxAccel: 20
-  airAccel: 10
+  maxAccel: 50
+  airAccel: 20
   jumpHeight: 1
   castHeight: -0.75
   castRadius: 0.375
@@ -373,7 +373,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.43382353, g: 0.43382353, b: 0.43382353, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
