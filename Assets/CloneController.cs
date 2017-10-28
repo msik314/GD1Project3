@@ -21,6 +21,8 @@ public class CloneController : MonoBehaviour
     private bool grounded;
     private MovementRecord record;
     private Rigidbody rb;
+    private Vector3 originalPos;
+    private Quaternion originalRot;
     
     // Use this for initialization
     void Awake()
@@ -29,6 +31,8 @@ public class CloneController : MonoBehaviour
         record = GetComponent<MovementRecord>();
         jumpVel = Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * jumpHeight);
         grounded = false;
+        originalPos = transform.position;
+        originalRot = transform.rotation;
     }
     
     // Update is called once per frame
@@ -75,7 +79,7 @@ public class CloneController : MonoBehaviour
         if(grounded && jumping)
         {
             grounded = false;
-            rb.AddForce(Vector3.up * jumpVel, ForceMode.VelocityChange);
+            rb.AddForce(Vector3.up * (jumpVel - rb.velocity.y), ForceMode.VelocityChange);
         }
     }
     
@@ -104,5 +108,12 @@ public class CloneController : MonoBehaviour
                 grounded = false;
             }
         }
+    }
+    
+    public void reset()
+    {
+        record.reset();
+        transform.position = originalPos;
+        transform.rotation = originalRot;
     }
 }

@@ -9,8 +9,7 @@ public class MovementRecord : MonoBehaviour
     private List<bool> jumps; 
     private int index;
     
-    // Use this for initialization
-    void Start ()
+    public void init()
     {
         targetVelocities = new List<Vector3>();
         targetOrientations = new List<Quaternion>();
@@ -24,7 +23,7 @@ public class MovementRecord : MonoBehaviour
         if(index < 0 || index >= targetVelocities.Count)
         {
             target = Vector3.zero;
-            orientation = Quaternion.identity;
+            orientation = targetOrientations[targetOrientations.Count - 1];
             return false;
         }
         else
@@ -55,10 +54,15 @@ public class MovementRecord : MonoBehaviour
         jumps = new List<bool>();
     }
     
-    public void getLists(out List<Vector3> targets, out List<Quaternion> orientations, out List<bool>jumps)
+    public void getLists(out List<Vector3> targets, out List<Quaternion> orientations, out List<bool>jumpsOut)
     {
         targets = targetVelocities;
         orientations = targetOrientations;
-        jumps = this.jumps;
+        jumpsOut = jumps;
+    }
+    
+    public void copy(MovementRecord mr)
+    {
+        mr.getLists(out targetVelocities, out targetOrientations, out jumps);
     }
 }

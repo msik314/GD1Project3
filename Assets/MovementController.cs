@@ -28,6 +28,7 @@ public class MovementController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         record = GetComponent<MovementRecord>();
+        record.init();
         jumpVel = Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * jumpHeight);
         grounded = false;
         targetVel = Vector3.zero;
