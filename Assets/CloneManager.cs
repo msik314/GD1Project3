@@ -41,6 +41,7 @@ public class CloneManager : MonoBehaviour
         if(player)
         {
             cloneMr.copy(playerMr);
+
             Camera.main.transform.parent = null;
             Camera.main.transform.position = camEnd;
             Camera.main.transform.rotation = Quaternion.Euler(camEuler);
