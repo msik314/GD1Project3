@@ -1,0 +1,1 @@
+Bed needs to be scaled to twice size of rooms (sorry) but all rooms can be scaled the same
