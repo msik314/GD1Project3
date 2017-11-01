@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 1468bbfe1005e4d4b95544d17fcf3010
-timeCreated: 1509566892
+guid: 6b16b0a2d87f07243a9c2f9c1cc900f7
+timeCreated: 1509569162
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,8 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pCube80
-    4300002: pCube81
+    4300000: pPlane2
   externalObjects:
   - first:
       type: UnityEngine:Material
