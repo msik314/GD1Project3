@@ -83,7 +83,7 @@ public class MovementController : MonoBehaviour
             actions |= 1;
         }
         
-        record.addTarget(targetVel, transform.rotation, actions);
+        record.addTarget(targetVel, new Vector2(Camera.main.gameObject.transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y), actions);
         interacting = false;
         
         Vector3 difference = new Vector3(targetVel.x - rb.velocity.x, 0, targetVel.z - rb.velocity.z);
