@@ -3,25 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public class LifespanScript : MonoBehaviour {
 
-public class TextboxScript : MonoBehaviour {
-
-	private Text curText;
-	private float timer;
+	public GameObject clnObj;
 	public GameObject textBox;
+	private Text curText;
+	private CloneManager clnMng;
 
 	// Use this for initialization
 	void Start () {
-		timer = 0;
 		curText = textBox.GetComponent<Text> ();
-	}
-
-	public void setText(string givenText){
-		curText.text = givenText;
+		clnMng = clnObj.GetComponent<CloneManager> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		setText ("Testing");	
+		curText.text = clnMng.getLife ().ToString ();
 	}
 }

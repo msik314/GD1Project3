@@ -33,7 +33,7 @@ public class cameraScript : MonoBehaviour
 	private void LateUpdate()
 	{
 		Vector3 dir = new Vector3(0, 0, -distance);
-		Quaternion rotation = Quaternion.Euler(currentY, currentX+90, 0);
+		Quaternion rotation = Quaternion.Euler(currentY, lookAt.rotation.eulerAngles.y, 0);
 		camTransform.position = lookAt.position + rotation * dir;
 
 		camTransform.LookAt(lookAt.position);

@@ -62,6 +62,10 @@ public class CloneManager : MonoBehaviour
         player.reset();
         life = maxLife;
     }
+
+	public float getLife(){
+		return life;
+	}
     
     void clear()
     {
