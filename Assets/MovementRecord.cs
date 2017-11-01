@@ -6,40 +6,40 @@ public class MovementRecord : MonoBehaviour
 {
     private List<Vector3> targetVelocities;
     private List<Quaternion> targetOrientations;
-    private List<bool> jumps; 
+    private List<byte> actions;
     private int index;
     
     public void init()
     {
         targetVelocities = new List<Vector3>();
         targetOrientations = new List<Quaternion>();
-        jumps = new List<bool>();
+        actions = new List<byte>();
         index = 0;
     }
     
     
-    public bool getTarget(out Vector3 target, out Quaternion orientation)
+    public byte getTarget(out Vector3 target, out Quaternion orientation)
     {
         if(index < 0 || index >= targetVelocities.Count)
         {
             target = Vector3.zero;
             orientation = targetOrientations[targetOrientations.Count - 1];
-            return false;
+            return 0;
         }
         else
         {
             target = targetVelocities[index];
             orientation = targetOrientations[index];
             ++index;
-            return jumps[index - 1];
+            return actions[index - 1];
         }
     }
     
-    public void addTarget(Vector3 target, Quaternion orientation, bool jumping)
+    public void addTarget(Vector3 target, Quaternion orientation, byte acting)
     {
         targetVelocities.Add(target);
         targetOrientations.Add(orientation);
-        jumps.Add(jumping);
+        actions.Add(acting);
     }
     
     public void reset()
@@ -51,18 +51,18 @@ public class MovementRecord : MonoBehaviour
     {
         targetVelocities = new List<Vector3>();
         targetOrientations = new List<Quaternion>();
-        jumps = new List<bool>();
+        actions = new List<byte>();
     }
     
-    public void getLists(out List<Vector3> targets, out List<Quaternion> orientations, out List<bool>jumpsOut)
+    public void getLists(out List<Vector3> targets, out List<Quaternion> orientations, out List<byte>actionsOut)
     {
         targets = targetVelocities;
         orientations = targetOrientations;
-        jumpsOut = jumps;
+        actionsOut = actions;
     }
     
     public void copy(MovementRecord mr)
     {
-        mr.getLists(out targetVelocities, out targetOrientations, out jumps);
+        mr.getLists(out targetVelocities, out targetOrientations, out actions);
     }
 }

@@ -15,6 +15,8 @@ public class MovementController : MonoBehaviour
     [SerializeField] private float castHeight;
     [SerializeField] private float castRadius;
     [SerializeField] private LayerMask castMask;
+    [SerializeField] private float interactDistance;
+    [SerializeField] private LayerMask interactMask;
     
     private Quaternion originalRot;
     private Vector3 originalPos;
@@ -23,6 +25,7 @@ public class MovementController : MonoBehaviour
     private MovementRecord record;
     private bool grounded;
     private bool jumping;
+    private bool interacting;
     private float jumpVel;
     private  CloneManager manager;
     
@@ -48,13 +51,14 @@ public class MovementController : MonoBehaviour
             targetVel = maxSpeed * targetVel.normalized;
         }
         
-        if(grounded && Input.GetButton("Jump"))
+        if(grounded && Input.GetButtonDown("Jump"))
         {
             jumping = true;
         }
-        else
+        
+        if(Input.GetButtonDown("Interact"))
         {
-            jumping = false;
+            interacting = true;
         }
         
         transform.Rotate(0, lookSensitivity * Input.GetAxisRaw("MouseX") * Time.deltaTime, 0);
@@ -67,7 +71,20 @@ public class MovementController : MonoBehaviour
             targetVel = transform.rotation * targetVel;
         }
         
-        record.addTarget(targetVel, transform.rotation, jumping);
+        byte actions = 0;
+        
+        if(interacting)
+        {
+            interact();
+            actions |= 2;
+        }
+        if(jumping)
+        {
+            actions |= 1;
+        }
+        
+        record.addTarget(targetVel, transform.rotation, actions);
+        interacting = false;
         
         Vector3 difference = new Vector3(targetVel.x - rb.velocity.x, 0, targetVel.z - rb.velocity.z);
         
@@ -106,6 +123,7 @@ public class MovementController : MonoBehaviour
             grounded = false;
             rb.AddForce(Vector3.up * (jumpVel - rb.velocity.y), ForceMode.VelocityChange);
         }
+        jumping = false;
     }
     
     void OnCollisionEnter(Collision col)
@@ -134,6 +152,21 @@ public class MovementController : MonoBehaviour
             }
         }
     }
+    
+    void interact()
+    {
+        Ray r = Camera.main.ScreenPointToRay(new Vector3(Camera.main.pixelWidth/2, Camera.main.pixelHeight/2, 0));
+        RaycastHit hit;
+        bool hasHit = Physics.Raycast(r, out hit, interactDistance, interactMask);
+        if(hasHit)
+        {
+            if(hit.collider.gameObject.tag == "Interactable")
+            {
+                hit.collider.gameObject.SendMessage("interact");//temporary
+            }
+        }
+    }
+    
     
     public void die()
     {

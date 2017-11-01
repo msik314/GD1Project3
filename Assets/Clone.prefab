@@ -123,6 +123,12 @@ MonoBehaviour:
   castMask:
     serializedVersion: 2
     m_Bits: 257
+  interactDistance: 3.25
+  interactMask:
+    serializedVersion: 2
+    m_Bits: 768
+  interactOffset: {x: 0, y: 2, z: -2.25}
+  interactEuler: {x: 15, y: 0, z: 0}
 --- !u!114 &114493178562924624
 MonoBehaviour:
   m_ObjectHideFlags: 1
