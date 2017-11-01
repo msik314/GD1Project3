@@ -41,11 +41,13 @@ public class CloneManager : MonoBehaviour
     {
         if(ccs.Count >= livesBeforeReset - 1)
         {
+
             for(int i = ccs.Count - 1; i >= 0; --i)
             {
                 Destroy(ccs[i].gameObject);
             }
             clear();
+
         }
         else
         {
