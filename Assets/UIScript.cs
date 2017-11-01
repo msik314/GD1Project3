@@ -11,7 +11,7 @@ public class UIScript : MonoBehaviour {
 	void Start () {
 		textBox.transform.position = new Vector3 (Screen.width/2 - border, Screen.height - textBox.GetComponent<RectTransform>().rect.height/2 - border, 0);
 		lifeSpan.transform.position = new Vector3 (Screen.width - lifeSpan.GetComponent<RectTransform>().rect.width/2 - border, 
-			Screen.height - lifeSpan.GetComponent<RectTransform>().rect.height/2 - border, 0);
+		Screen.height - lifeSpan.GetComponent<RectTransform>().rect.height/2 - border, 0);
 
 	}
 }

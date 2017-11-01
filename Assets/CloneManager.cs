@@ -66,6 +66,10 @@ public class CloneManager : MonoBehaviour
 	public float getLife(){
 		return life;
 	}
+
+	public float getMaxLife(){
+		return maxLife;
+	}
     
     void clear()
     {
