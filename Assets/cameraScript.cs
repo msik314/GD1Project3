@@ -10,7 +10,7 @@ public class cameraScript : MonoBehaviour
 
 	private Camera cam;
 
-	private float distance = 10.0f;
+	[SerializeField]private float distance = 10.0f;
 	private float currentX = 0.0f;
 	private float currentY = 0.0f;
 	private float sensivityX = 0.15f;

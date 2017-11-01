@@ -13,5 +13,7 @@ public class UIScript : MonoBehaviour {
 		lifeSpan.transform.position = new Vector3 (Screen.width - lifeSpan.GetComponent<RectTransform>().rect.width/2 - border, 
 		Screen.height - lifeSpan.GetComponent<RectTransform>().rect.height/2 - border, 0);
 
+	
+
 	}
 }
