@@ -5,24 +5,26 @@ using UnityEngine;
 public class CloneManager : MonoBehaviour
 {
     [SerializeField] private float maxLife;
-    [SerializeField] private GameObject activate;
-    [SerializeField] private Vector3 camEnd;
-    [SerializeField] private Vector3 camEuler;
+    [SerializeField] private GameObject clone;
+    [SerializeField] int livesBeforeReset;
     
     private float life;
-    private GameObject player;
+    private MovementController player;
     private MovementRecord playerMr;
-    private MovementRecord cloneMr;
-    private CloneController cc;
+    [SerializeField]private List <CloneController> ccs;
+    private Vector3 originalPos;
+    private Quaternion originalRot;
     
     // Use this for initialization
     void Awake()
     {
         life = maxLife;
-        player = GameObject.FindWithTag("Player");
-        playerMr = player.GetComponent<MovementRecord>();
-        cloneMr = activate.GetComponent<MovementRecord>();
-        cc = activate.GetComponent<CloneController>();
+        GameObject p = GameObject.FindWithTag("Player");
+        playerMr = p.GetComponent<MovementRecord>();
+        player = p.GetComponent<MovementController>();
+        ccs = new List<CloneController>();
+        originalPos = player.transform.position;
+        originalRot = player.transform.rotation;
     }
     
     // Update is called once per frame
@@ -32,24 +34,35 @@ public class CloneManager : MonoBehaviour
         if(life <= 0)
         {
             cycle();
-            life = maxLife;
         }
     }
     
-    void cycle()
+    public void cycle()
     {
-        if(player)
+        if(ccs.Count >= livesBeforeReset - 1)
         {
-            cloneMr.copy(playerMr);
-            Camera.main.transform.parent = null;
-            Camera.main.transform.position = camEnd;
-            Camera.main.transform.rotation = Quaternion.Euler(camEuler);
-            Destroy(player);
-            activate.SetActive(true);
+            for(int i = ccs.Count - 1; i >= 0; --i)
+            {
+                Destroy(ccs[i].gameObject);
+            }
+            clear();
         }
         else
         {
-            cc.reset();
+            foreach(CloneController clone in ccs)
+            {
+                clone.reset();
+            }
+            GameObject c = (GameObject)Instantiate(clone, originalPos, originalRot);
+            c.GetComponent<MovementRecord>().copy(playerMr);
+            ccs.Add(c.GetComponent<CloneController>());
         }
+        player.reset();
+        life = maxLife;
+    }
+    
+    void clear()
+    {
+        ccs.Clear();
     }
 }

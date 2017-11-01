@@ -110,10 +110,16 @@ public class CloneController : MonoBehaviour
         }
     }
     
+    public void die()
+    {
+        gameObject.SetActive(false);
+    }
+    
     public void reset()
     {
         record.reset();
         transform.position = originalPos;
         transform.rotation = originalRot;
+        gameObject.SetActive(true);
     }
 }

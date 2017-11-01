@@ -16,12 +16,15 @@ public class MovementController : MonoBehaviour
     [SerializeField] private float castRadius;
     [SerializeField] private LayerMask castMask;
     
+    private Quaternion originalRot;
+    private Vector3 originalPos;
     private Vector3 targetVel;
     private Rigidbody rb;
     private MovementRecord record;
     private bool grounded;
     private bool jumping;
     private float jumpVel;
+    private  CloneManager manager;
     
     // Use this for initialization
     void Awake()
@@ -32,6 +35,8 @@ public class MovementController : MonoBehaviour
         jumpVel = Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * jumpHeight);
         grounded = false;
         targetVel = Vector3.zero;
+        originalPos = transform.position;
+        originalRot = transform.rotation;
     }
     
     // Update is called once per frame
@@ -128,5 +133,22 @@ public class MovementController : MonoBehaviour
                 grounded = false;
             }
         }
+    }
+    
+    public void die()
+    {
+        manager.cycle();
+    }
+    
+    public void reset()
+    {
+        record.clear();
+        transform.position = originalPos;
+        transform.rotation = originalRot;
+    }
+    
+    public void setManager(CloneManager cloneManager)
+    {
+        manager = cloneManager;
     }
 }
