@@ -1,0 +1,319 @@
+fileFormatVersion: 2
+guid: bf1d993f7e0cba0468e063303e021688
+timeCreated: 1510000422
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bucket:pCylinder5
+    100002: Bucket:pCylinder6
+    100004: Bucket:pTorus1
+    100006: pSphere1
+    100008: pSphere2
+    100010: pSphere3
+    100012: pSphere4
+    100014: stickdude_model:Chest
+    100016: stickdude_model:ChestOrigin
+    100018: stickdude_model:Controls
+    100020: stickdude_model:Head
+    100022: stickdude_model:Head 1
+    100024: stickdude_model:Hips
+    100026: stickdude_model:Hips 1
+    100028: stickdude_model:joints
+    100030: stickdude_model:LeftAnkle
+    100032: stickdude_model:LeftArm
+    100034: stickdude_model:LeftElbow
+    100036: stickdude_model:LeftFoot
+    100038: stickdude_model:LeftFoot 1
+    100040: stickdude_model:LeftFoot 2
+    100042: stickdude_model:LeftForeArm
+    100044: stickdude_model:LeftHand
+    100046: stickdude_model:LeftKnee
+    100048: stickdude_model:LeftKnee 1
+    100050: stickdude_model:LeftLeg
+    100052: stickdude_model:LeftLeg 1
+    100054: stickdude_model:LeftShoulder
+    100056: stickdude_model:LeftShoulder 1
+    100058: stickdude_model:LeftToeBase
+    100060: stickdude_model:LeftUpLeg
+    100062: stickdude_model:LeftUpLeg 1
+    100064: stickdude_model:LeftWrist
+    100066: stickdude_model:model
+    100068: stickdude_model:Neck
+    100070: stickdude_model:QuickRigCharacter_Ctrl_Head
+    100072: stickdude_model:QuickRigCharacter_Ctrl_LeftArm
+    100074: stickdude_model:QuickRigCharacter_Ctrl_LeftForeArm
+    100076: stickdude_model:QuickRigCharacter_Ctrl_LeftHand
+    100078: stickdude_model:QuickRigCharacter_Ctrl_LeftShoulder
+    100080: stickdude_model:QuickRigCharacter_Ctrl_LeftToeBase
+    100082: stickdude_model:QuickRigCharacter_Ctrl_Neck
+    100084: stickdude_model:QuickRigCharacter_Ctrl_RightArm
+    100086: stickdude_model:QuickRigCharacter_Ctrl_RightFoot
+    100088: stickdude_model:QuickRigCharacter_Ctrl_RightForeArm
+    100090: stickdude_model:QuickRigCharacter_Ctrl_RightHand
+    100092: stickdude_model:QuickRigCharacter_Ctrl_RightLeg
+    100094: stickdude_model:QuickRigCharacter_Ctrl_RightShoulder
+    100096: stickdude_model:QuickRigCharacter_Ctrl_RightToeBase
+    100098: stickdude_model:QuickRigCharacter_Ctrl_RightUpLeg
+    100100: stickdude_model:QuickRigCharacter_Ctrl_Spine
+    100102: stickdude_model:QuickRigCharacter_Ctrl_Spine1
+    100104: stickdude_model:QuickRigCharacter_Ctrl_Spine2
+    100106: stickdude_model:QuickRigCharacter_Guides
+    100108: stickdude_model:QuickRigCharacter_Head
+    100110: stickdude_model:QuickRigCharacter_Hips
+    100112: stickdude_model:QuickRigCharacter_LeftArm
+    100114: stickdude_model:QuickRigCharacter_LeftFoot
+    100116: stickdude_model:QuickRigCharacter_LeftForeArm
+    100118: stickdude_model:QuickRigCharacter_LeftHand
+    100120: stickdude_model:QuickRigCharacter_LeftLeg
+    100122: stickdude_model:QuickRigCharacter_LeftShoulder
+    100124: stickdude_model:QuickRigCharacter_LeftToeBase
+    100126: stickdude_model:QuickRigCharacter_LeftUpLeg
+    100128: stickdude_model:QuickRigCharacter_Neck
+    100130: stickdude_model:QuickRigCharacter_Reference
+    100132: stickdude_model:QuickRigCharacter_RightArm
+    100134: stickdude_model:QuickRigCharacter_RightFoot
+    100136: stickdude_model:QuickRigCharacter_RightForeArm
+    100138: stickdude_model:QuickRigCharacter_RightHand
+    100140: stickdude_model:QuickRigCharacter_RightLeg
+    100142: stickdude_model:QuickRigCharacter_RightShoulder
+    100144: stickdude_model:QuickRigCharacter_RightToeBase
+    100146: stickdude_model:QuickRigCharacter_RightUpLeg
+    100148: stickdude_model:QuickRigCharacter_Spine
+    100150: stickdude_model:QuickRigCharacter_Spine1
+    100152: stickdude_model:QuickRigCharacter_Spine2
+    100154: stickdude_model:Reference
+    100156: stickdude_model:RightAnkle
+    100158: stickdude_model:RightArm
+    100160: stickdude_model:RightElbow
+    100162: stickdude_model:RightFoot
+    100164: stickdude_model:RightFoot 1
+    100166: stickdude_model:RightForeArm
+    100168: stickdude_model:RightHand
+    100170: stickdude_model:RightKnee
+    100172: stickdude_model:RightLeg
+    100174: stickdude_model:RightLeg 1
+    100176: stickdude_model:RightShoulder
+    100178: stickdude_model:RightShoulder 1
+    100180: stickdude_model:RightToeBase
+    100182: stickdude_model:RightUpLeg
+    100184: stickdude_model:RightWrist
+    100186: stickdude_model:Spine
+    100188: stickdude_model:Spine1
+    100190: stickdude_model:Spine2
+    100192: //RootNode
+    400000: Bucket:pCylinder5
+    400002: Bucket:pCylinder6
+    400004: Bucket:pTorus1
+    400006: pSphere1
+    400008: pSphere2
+    400010: pSphere3
+    400012: pSphere4
+    400014: stickdude_model:Chest
+    400016: stickdude_model:ChestOrigin
+    400018: stickdude_model:Controls
+    400020: stickdude_model:Head
+    400022: stickdude_model:Head 1
+    400024: stickdude_model:Hips
+    400026: stickdude_model:Hips 1
+    400028: stickdude_model:joints
+    400030: stickdude_model:LeftAnkle
+    400032: stickdude_model:LeftArm
+    400034: stickdude_model:LeftElbow
+    400036: stickdude_model:LeftFoot
+    400038: stickdude_model:LeftFoot 1
+    400040: stickdude_model:LeftFoot 2
+    400042: stickdude_model:LeftForeArm
+    400044: stickdude_model:LeftHand
+    400046: stickdude_model:LeftKnee
+    400048: stickdude_model:LeftKnee 1
+    400050: stickdude_model:LeftLeg
+    400052: stickdude_model:LeftLeg 1
+    400054: stickdude_model:LeftShoulder
+    400056: stickdude_model:LeftShoulder 1
+    400058: stickdude_model:LeftToeBase
+    400060: stickdude_model:LeftUpLeg
+    400062: stickdude_model:LeftUpLeg 1
+    400064: stickdude_model:LeftWrist
+    400066: stickdude_model:model
+    400068: stickdude_model:Neck
+    400070: stickdude_model:QuickRigCharacter_Ctrl_Head
+    400072: stickdude_model:QuickRigCharacter_Ctrl_LeftArm
+    400074: stickdude_model:QuickRigCharacter_Ctrl_LeftForeArm
+    400076: stickdude_model:QuickRigCharacter_Ctrl_LeftHand
+    400078: stickdude_model:QuickRigCharacter_Ctrl_LeftShoulder
+    400080: stickdude_model:QuickRigCharacter_Ctrl_LeftToeBase
+    400082: stickdude_model:QuickRigCharacter_Ctrl_Neck
+    400084: stickdude_model:QuickRigCharacter_Ctrl_RightArm
+    400086: stickdude_model:QuickRigCharacter_Ctrl_RightFoot
+    400088: stickdude_model:QuickRigCharacter_Ctrl_RightForeArm
+    400090: stickdude_model:QuickRigCharacter_Ctrl_RightHand
+    400092: stickdude_model:QuickRigCharacter_Ctrl_RightLeg
+    400094: stickdude_model:QuickRigCharacter_Ctrl_RightShoulder
+    400096: stickdude_model:QuickRigCharacter_Ctrl_RightToeBase
+    400098: stickdude_model:QuickRigCharacter_Ctrl_RightUpLeg
+    400100: stickdude_model:QuickRigCharacter_Ctrl_Spine
+    400102: stickdude_model:QuickRigCharacter_Ctrl_Spine1
+    400104: stickdude_model:QuickRigCharacter_Ctrl_Spine2
+    400106: stickdude_model:QuickRigCharacter_Guides
+    400108: stickdude_model:QuickRigCharacter_Head
+    400110: stickdude_model:QuickRigCharacter_Hips
+    400112: stickdude_model:QuickRigCharacter_LeftArm
+    400114: stickdude_model:QuickRigCharacter_LeftFoot
+    400116: stickdude_model:QuickRigCharacter_LeftForeArm
+    400118: stickdude_model:QuickRigCharacter_LeftHand
+    400120: stickdude_model:QuickRigCharacter_LeftLeg
+    400122: stickdude_model:QuickRigCharacter_LeftShoulder
+    400124: stickdude_model:QuickRigCharacter_LeftToeBase
+    400126: stickdude_model:QuickRigCharacter_LeftUpLeg
+    400128: stickdude_model:QuickRigCharacter_Neck
+    400130: stickdude_model:QuickRigCharacter_Reference
+    400132: stickdude_model:QuickRigCharacter_RightArm
+    400134: stickdude_model:QuickRigCharacter_RightFoot
+    400136: stickdude_model:QuickRigCharacter_RightForeArm
+    400138: stickdude_model:QuickRigCharacter_RightHand
+    400140: stickdude_model:QuickRigCharacter_RightLeg
+    400142: stickdude_model:QuickRigCharacter_RightShoulder
+    400144: stickdude_model:QuickRigCharacter_RightToeBase
+    400146: stickdude_model:QuickRigCharacter_RightUpLeg
+    400148: stickdude_model:QuickRigCharacter_Spine
+    400150: stickdude_model:QuickRigCharacter_Spine1
+    400152: stickdude_model:QuickRigCharacter_Spine2
+    400154: stickdude_model:Reference
+    400156: stickdude_model:RightAnkle
+    400158: stickdude_model:RightArm
+    400160: stickdude_model:RightElbow
+    400162: stickdude_model:RightFoot
+    400164: stickdude_model:RightFoot 1
+    400166: stickdude_model:RightForeArm
+    400168: stickdude_model:RightHand
+    400170: stickdude_model:RightKnee
+    400172: stickdude_model:RightLeg
+    400174: stickdude_model:RightLeg 1
+    400176: stickdude_model:RightShoulder
+    400178: stickdude_model:RightShoulder 1
+    400180: stickdude_model:RightToeBase
+    400182: stickdude_model:RightUpLeg
+    400184: stickdude_model:RightWrist
+    400186: stickdude_model:Spine
+    400188: stickdude_model:Spine1
+    400190: stickdude_model:Spine2
+    400192: //RootNode
+    2300000: Bucket:pCylinder5
+    2300002: Bucket:pCylinder6
+    2300004: Bucket:pTorus1
+    2300006: pSphere1
+    2300008: pSphere2
+    2300010: pSphere3
+    2300012: pSphere4
+    3300000: Bucket:pCylinder5
+    3300002: Bucket:pCylinder6
+    3300004: Bucket:pTorus1
+    3300006: pSphere1
+    3300008: pSphere2
+    3300010: pSphere3
+    3300012: pSphere4
+    4300000: stickdude_model:model
+    4300002: Bucket:pCylinder5
+    4300004: Bucket:pTorus1
+    4300006: Bucket:pCylinder6
+    4300008: pSphere1
+    4300010: pSphere2
+    4300012: pSphere3
+    4300014: pSphere4
+    7400000: ThrowWater
+    9500000: //RootNode
+    13700000: stickdude_model:model
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bucket_oceanShader1
+    second: {fileID: 2100000, guid: a889377ee1cfbd04eacf3bf7982bedca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 58eff853014db3645b01250b39b7b48c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 1b6f035e35c9cec40adb8b2192af236b, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
