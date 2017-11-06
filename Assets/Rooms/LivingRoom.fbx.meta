@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: b87d19fcff376514692bd9a92f9aff3e
-timeCreated: 1509569162
+guid: ee7dc07f38cf85249a106e905aebfcdd
+timeCreated: 1510003799
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,19 +9,18 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pCube81
-    4300002: pCube82
+    4300000: pCube58
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HallwayDiningRmKitchen_phong1
+    second: {fileID: 2100000, guid: b2a562f2af5a20f4887946640517f156, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
     second: {fileID: 2100000, guid: 32a1e319de3dd0a4cb5dfa9fe760e196, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: phong1
-    second: {fileID: 2100000, guid: 6182b432c2a705042a3925fe89acad74, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

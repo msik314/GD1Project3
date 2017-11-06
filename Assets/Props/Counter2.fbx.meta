@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: b87d19fcff376514692bd9a92f9aff3e
-timeCreated: 1509569162
+guid: c176293753a2770488e826c0013a4279
+timeCreated: 1510003980
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -9,19 +9,13 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pCube81
-    4300002: pCube82
+    4300000: pCube2
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
     second: {fileID: 2100000, guid: 32a1e319de3dd0a4cb5dfa9fe760e196, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: phong1
-    second: {fileID: 2100000, guid: 6182b432c2a705042a3925fe89acad74, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
