@@ -28,6 +28,8 @@ public class MovementController : MonoBehaviour
     private bool interacting;
     private float jumpVel;
     private  CloneManager manager;
+
+    private InteractControl interactScript;
     
     // Use this for initialization
     void Awake()
@@ -156,13 +158,17 @@ public class MovementController : MonoBehaviour
     void interact()
     {
         Ray r = Camera.main.ScreenPointToRay(new Vector3(Camera.main.pixelWidth/2, Camera.main.pixelHeight/2, 0));
+        Debug.DrawLine(r.origin, new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2,0),Color.black, 5.0f);
         RaycastHit hit;
         bool hasHit = Physics.Raycast(r, out hit, interactDistance, interactMask);
+        print(hasHit);
         if(hasHit)
         {
+            print("1");
             if(hit.collider.gameObject.tag == "Interactable")
             {
-                hit.collider.gameObject.SendMessage("interact");//temporary
+                print("2");
+                hit.collider.gameObject.GetComponent<InteractControl>().doInteraction();
             }
         }
     }
