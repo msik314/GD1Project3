@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 16ca4af6f93946c489b8adfd95c15ee1
 timeCreated: 1510003591
+=======
+guid: ee7dc07f38cf85249a106e905aebfcdd
+timeCreated: 1510003799
+>>>>>>> 755b95406dfce1676c276777b938c00a725870fd
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -15,7 +20,11 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: HallwayDiningRmKitchen_phong1
+<<<<<<< HEAD
     second: {fileID: 2100000, guid: 28d0f66f9ca193b4bb77bb0e83185b26, type: 2}
+=======
+    second: {fileID: 2100000, guid: b2a562f2af5a20f4887946640517f156, type: 2}
+>>>>>>> 755b95406dfce1676c276777b938c00a725870fd
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
