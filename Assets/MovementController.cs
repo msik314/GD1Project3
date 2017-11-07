@@ -183,6 +183,7 @@ public class MovementController : MonoBehaviour
         record.clear();
         transform.position = originalPos;
         transform.rotation = originalRot;
+        rb.velocity = Vector3.zero;
     }
     
     public void setManager(CloneManager cloneManager)
