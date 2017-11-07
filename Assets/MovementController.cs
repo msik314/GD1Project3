@@ -62,6 +62,11 @@ public class MovementController : MonoBehaviour
         }
         
         transform.Rotate(0, lookSensitivity * Input.GetAxisRaw("MouseX") * Time.deltaTime, 0);
+        
+        if(Input.GetButtonDown("Reset"))
+        {
+            manager.reset();
+        }
     }
     
     void FixedUpdate()

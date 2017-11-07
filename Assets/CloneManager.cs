@@ -22,6 +22,7 @@ public class CloneManager : MonoBehaviour
         GameObject p = GameObject.FindWithTag("Player");
         playerMr = p.GetComponent<MovementRecord>();
         player = p.GetComponent<MovementController>();
+        player.setManager(this);
         ccs = new List<CloneController>();
         originalPos = player.transform.position;
         originalRot = player.transform.rotation;
@@ -47,7 +48,6 @@ public class CloneManager : MonoBehaviour
                 Destroy(ccs[i].gameObject);
             }
             clear();
-
         }
         else
         {
@@ -74,5 +74,16 @@ public class CloneManager : MonoBehaviour
     void clear()
     {
         ccs.Clear();
+    }
+    
+    public void reset()
+    {
+        for(int i = ccs.Count - 1; i >= 0; --i)
+        {
+            Destroy(ccs[i].gameObject);
+        }
+        clear();
+        player.reset();
+        life = maxLife;
     }
 }
