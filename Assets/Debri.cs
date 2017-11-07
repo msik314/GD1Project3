@@ -44,5 +44,6 @@ public class Debri : InteractControl {
             goingUp = true;
             timeStart = Time.time;
         }
-    }
+		
+	}
 }
