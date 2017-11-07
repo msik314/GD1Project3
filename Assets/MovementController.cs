@@ -45,7 +45,7 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        targetVel = maxSpeed * new Vector3(Input.GetAxis("Sideways"), 0, Input.GetAxis("Forward"));
+        targetVel = maxSpeed * new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         if(targetVel.sqrMagnitude > maxSpeed)
         {
             targetVel = maxSpeed * targetVel.normalized;
@@ -62,6 +62,11 @@ public class MovementController : MonoBehaviour
         }
         
         transform.Rotate(0, lookSensitivity * Input.GetAxisRaw("MouseX") * Time.deltaTime, 0);
+        
+        if(Input.GetButtonDown("Reset"))
+        {
+            manager.reset();
+        }
     }
     
     void FixedUpdate()
