@@ -164,7 +164,7 @@ public class MovementController : MonoBehaviour
         {
             if(hit.collider.gameObject.tag == "Interactable")
             {
-                hit.collider.gameObject.GetComponent<InteractControl>().doInteraction();
+                hit.collider.gameObject.GetComponent<InteractControl>().doInteraction(this.transform);
             }
         }
     }

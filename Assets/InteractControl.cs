@@ -14,7 +14,7 @@ public abstract class InteractControl : MonoBehaviour {
 		
 	}
 
-    public virtual void doInteraction() {
+    public virtual void doInteraction(Transform player) {
         print("interact");
     }
 }

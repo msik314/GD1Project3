@@ -27,7 +27,9 @@ public class CloneController : MonoBehaviour
     private Rigidbody rb;
     private Vector3 originalPos;
     private Quaternion originalRot;
-    
+
+    private InteractControl interactScript;
+
     // Use this for initialization
     void Awake()
     {
@@ -135,7 +137,7 @@ public class CloneController : MonoBehaviour
         {
             if(hit.collider.gameObject.tag == "Interactable")
             {
-                hit.collider.gameObject.Use() ;//temporary
+                hit.collider.gameObject.GetComponent<InteractControl>().doInteraction(this.transform) ;//temporary
             }
         }
     }

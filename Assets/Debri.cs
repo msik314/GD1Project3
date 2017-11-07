@@ -39,7 +39,7 @@ public class Debri : InteractControl {
         }
 	}
 
-    public override void doInteraction(){
+    public override void doInteraction(Transform player){
         if (!goingUp && !goingDown){
             goingUp = true;
             timeStart = Time.time;
