@@ -135,7 +135,7 @@ public class CloneController : MonoBehaviour
         {
             if(hit.collider.gameObject.tag == "Interactable")
             {
-                hit.collider.gameObject.GetComponent<InteractControl>().doInteraction();//temporary
+                hit.collider.gameObject.GetComponent<InteractControl>().doInteraction(this.transform) ;//temporary
             }
         }
     }

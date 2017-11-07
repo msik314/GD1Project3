@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractControl : MonoBehaviour {
+public abstract class InteractControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +14,7 @@ public class InteractControl : MonoBehaviour {
 		
 	}
 
-    public void doInteraction() {
+    public virtual void doInteraction(Transform player) {
         print("interact");
     }
 }
