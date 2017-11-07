@@ -1,0 +1,4 @@
+All rooms need to be scaled the same to fit together, but props can be any scale. Maya does export things very small, though, so we will have to scale them up no matter what.
+
+
+For some reason, need to drag actual sketchbook page texture onto the model from Sketchbook > Materials into Element 0 spot in the Inspector. Don't know why.
