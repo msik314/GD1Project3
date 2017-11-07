@@ -237,7 +237,7 @@ MonoBehaviour:
   castMask:
     serializedVersion: 2
     m_Bits: 257
-  interactDistance: 3.25
+  interactDistance: 15
   interactMask:
     serializedVersion: 2
     m_Bits: 768
@@ -653,8 +653,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0938865, y: 1.6694717, z: 1.329957}
+  m_Center: {x: -0.005992651, y: 0.33473587, z: 0.04398966}
 --- !u!33 &1332293454
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -669,8 +669,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1332293451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.74, z: 14.83}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalPosition: {x: 0, y: 0.125, z: 14.83}
+  m_LocalScale: {x: 5, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8

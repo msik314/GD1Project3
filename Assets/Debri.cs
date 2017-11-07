@@ -2,19 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class InteractControl : MonoBehaviour {
+public class Debri : InteractControl {
 
 	// Use this for initialization
 	void Start () {
-		
+        doInteraction();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
-
-    public void doInteraction() {
-        print("interact");
-    }
 }
