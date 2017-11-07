@@ -154,5 +154,6 @@ public class CloneController : MonoBehaviour
         transform.position = originalPos;
         transform.rotation = originalRot;
         gameObject.SetActive(true);
+        rb.velocity = Vector3.zero;
     }
 }
