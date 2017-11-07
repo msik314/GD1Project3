@@ -158,7 +158,7 @@ public class MovementController : MonoBehaviour
     void interact()
     {
         Ray r = Camera.main.ScreenPointToRay(new Vector3(Camera.main.pixelWidth/2, Camera.main.pixelHeight/2, 0));
-        Debug.DrawLine(r.origin, new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2,0),Color.black, 5.0f);
+        Debug.DrawRay(r.origin, new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2,0),Color.black, 5.0f);
         RaycastHit hit;
         bool hasHit = Physics.Raycast(r, out hit, interactDistance, interactMask);
         print(hasHit);
