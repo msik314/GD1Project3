@@ -162,9 +162,6 @@ public class CloneController : MonoBehaviour
         else{
             
             Vector3 p = new Vector3(0, 0, Camera.main.nearClipPlane - interactCameraDistance);
-            print(new Vector3(0, interactVertOffset, 0));
-            print(Quaternion.Euler(rot.x, 0, 0));
-            print(p);
             p = transform.TransformPoint(new Vector3(0, interactVertOffset, 0) + (Quaternion.Euler(rot.x, 0, 0) * p));
             Vector3 d = transform.rotation * Quaternion.Euler(rot.x, 0, 0) * Vector3.forward;
             Debug.DrawRay(p, d * interactDistance, Color.black, 50f);

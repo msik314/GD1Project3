@@ -19,7 +19,6 @@ public class TextInteract : InteractControl {
 
 
 	public override void doInteraction(Transform player) {
-		print ("Running itneract!");
 		if (player.gameObject.tag == "Player") {
 			txtscript.setText (textToPrint);
 		}

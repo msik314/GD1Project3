@@ -16,9 +16,13 @@ public class FrontDoor : InteractControl {
 
     public override void doInteraction(Transform player)
     {
-        if (player.gameObject.GetComponent<PlayerKeys>().keyNum >= 3) {
-            print("game's done!");
-            //code to load next scene here
+        if(player.gameObject.tag == "Player")
+        {
+            if (player.gameObject.GetComponent<PlayerKeys>().keyNum >= 3)
+            {
+                print("game's done!");
+                //code to load next scene here
+            }
         }
     }
 }
