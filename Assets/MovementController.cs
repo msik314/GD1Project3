@@ -140,7 +140,7 @@ public class MovementController : MonoBehaviour
         jumping = false;
 		float totalVelocity = Mathf.Abs(targetVel.x) + Mathf.Abs(targetVel.y) + Mathf.Abs(targetVel.z);
 		anim.SetFloat ("curVelocity", totalVelocity);
-		print (grounded);
+
     }
     
     void OnCollisionStay(Collision col)
