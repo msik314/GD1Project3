@@ -29,13 +29,10 @@ public class CloneController : MonoBehaviour
     private Vector3 originalPos;
     private Quaternion originalRot;
     private Vector2 rot;
-<<<<<<< HEAD
 	private Animator anim;
 
-=======
     private Vector3 vertComp;
     
->>>>>>> e38b2d704e0c9c1e3aa670989d9d965846b0e5e4
     // Use this for initialization
     void Awake()
     {
