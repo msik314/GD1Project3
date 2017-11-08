@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.27060288, g: 0.13065413, b: 0.013204678, a: 1}
+  m_IndirectSpecularColor: {r: 0.27059993, g: 0.13064986, b: 0.013202297, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -374,7 +374,7 @@ MonoBehaviour:
   down: {x: -5.16, y: -1.66, z: -16.01}
   up: {x: -5.16, y: 1.18, z: -16.01}
   rate: 1
-  duration: 5
+  duration: 3
 --- !u!65 &307887871
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -414,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec99a7bf0ada3f4095bcfd4d1d1bc35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 10
+  maxLife: 20
   clone: {fileID: 1600156557343312, guid: 38e319e759180fc47bc7174cfbb7fe61, type: 2}
   livesBeforeReset: 3
   ui: {fileID: 1947345215}
@@ -1491,9 +1491,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   down: {x: -8.91, y: -4.22, z: 6.02}
-  up: {x: -8.91, y: -2.52, z: 6.02}
+  up: {x: -8.91, y: -2, z: 6.02}
   rate: 1
-  duration: 5
+  duration: 3
 --- !u!65 &1445038591
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2541,7 +2541,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1947345208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 700.5, y: 394, z: 0}
+  m_LocalPosition: {x: 351.5, y: 184, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1521097181}
@@ -2695,6 +2695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a74ad7dc55d9ff448d2d999860dfeac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyNum: 0
   key: {fileID: 1596701301061498, guid: 6149c319e3bec054ea20a4355c429e44, type: 2}
   ui: {fileID: 1947345215}
 --- !u!82 &1969049988
