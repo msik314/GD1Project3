@@ -17,7 +17,8 @@ public class CloneManager : MonoBehaviour
     private Quaternion originalRot;
     
     private List<InteractControl> interactables;
-
+    bool hasFired;
+    
     // Use this for initialization
     void Awake()
     {
@@ -28,7 +29,7 @@ public class CloneManager : MonoBehaviour
         player = p.GetComponent<MovementController>();
         player.setManager(this);
         ccs = new List<CloneController>();
-        originalPos = player.transform.position;
+        originalPos = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z);
         originalRot = player.transform.rotation;
         interactables = new List<InteractControl>();
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Interactable");
@@ -41,15 +42,17 @@ public class CloneManager : MonoBehaviour
         {
             interactables.Add(g.GetComponent<InteractControl>());
         }
+        hasFired = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         life -= Time.deltaTime;
-        if(life <= 0)
+        if(life <= 0 && !hasFired)
         {
-            cycle();
+            player.die();
+            hasFired = true;
         }
     }
 
@@ -73,6 +76,7 @@ public class CloneManager : MonoBehaviour
         {
             foreach(CloneController clone in ccs)
             {
+                clone.setOriginalPos(originalPos);
                 clone.reset();
             }
             GameObject c = (GameObject)Instantiate(clone, originalPos, originalRot);
@@ -82,6 +86,7 @@ public class CloneManager : MonoBehaviour
         }
         player.reset();
         life = maxLife;
+        hasFired = false;
     }
 
 	public float getLife(){
@@ -116,5 +121,6 @@ public class CloneManager : MonoBehaviour
         clear();
         player.reset();
         life = maxLife;
+        hasFired = false;
     }
 }

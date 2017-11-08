@@ -18,10 +18,13 @@ public class MovementController : MonoBehaviour
     [SerializeField] private LayerMask castMask;
     [SerializeField] private float interactDistance;
     [SerializeField] private LayerMask interactMask;
+    [SerializeField] private float suffocateTime;
+    [SerializeField] private float crushTime;
 
     public bool canMove;
     public bool hasBucket;
 
+    private bool canRotate;
     private Quaternion originalRot;
     private Vector3 originalPos;
     private Vector3 targetVel;
@@ -46,6 +49,7 @@ public class MovementController : MonoBehaviour
         jumpVel = Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * jumpHeight);
         grounded = false;
         canMove = true;
+        canRotate = true;
         hasBucket = false;
         targetVel = Vector3.zero;
         originalPos = transform.position;
@@ -70,8 +74,10 @@ public class MovementController : MonoBehaviour
         {
             interacting = true;
         }
-        
-        transform.Rotate(0, lookSensitivity * Input.GetAxisRaw("MouseX") * Time.deltaTime, 0);
+        if(canRotate)
+        {
+            transform.Rotate(0, lookSensitivity * Input.GetAxisRaw("MouseX") * Time.deltaTime, 0);
+        }
         
         if(Input.GetButtonDown("Reset"))
         {
@@ -225,13 +231,23 @@ public class MovementController : MonoBehaviour
     
     public void die()
     {
-        manager.cycle();
+        canMove = false;
+        canRotate = false;
+        StartCoroutine(dieWait());
+    }
+    
+    public void crush()
+    {
+        canMove = false;
+        canRotate = false;
+        StartCoroutine(crushWait());
     }
     
     public void reset()
     {
         record.clear();
         canMove = true;
+        canRotate = true;
         hasBucket = false;
         transform.position = originalPos;
         transform.rotation = originalRot;
@@ -241,5 +257,17 @@ public class MovementController : MonoBehaviour
     public void setManager(CloneManager cloneManager)
     {
         manager = cloneManager;
+    }
+    
+    IEnumerator dieWait()
+    {
+        yield return new WaitForSeconds(suffocateTime);
+        manager.cycle();
+    }
+    
+    IEnumerator crushWait()
+    {
+        yield return new WaitForSeconds(crushTime);
+        manager.cycle();
     }
 }

@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4162500973917770}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4249190904125154}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4922060566475426}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4605247678230598}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:RightShoulder 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4754597377433348}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Guides
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4924823285210908}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4787010447742450}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4898246760442938}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4698935626192626}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Ctrl_Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4788374495528080}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Ctrl_RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4482400153077628}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4419533954299340}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4341062721746750}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4094978718408910}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Ctrl_LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4641707760485790}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4708636345653938}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Ctrl_Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4249105076328878}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Ctrl_RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,7 +274,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4989562618337370}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Ctrl_RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4060383342299026}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +304,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4361007307813786}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4746533522489524}
   - component: {fileID: 137552030625311484}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,7 +335,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4213487887858520}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:LeftUpLeg 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4570083270554418}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:RightLeg 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4084770381984732}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:Head 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +380,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4729176921397974}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:LeftAnkle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4229638395587192}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +410,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4601605645780206}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4365589390277626}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Ctrl_LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,7 +440,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4783191775657312}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Ctrl_RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,7 +455,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4261579785068774}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,7 +470,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4568690565064970}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4864200705857174}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Ctrl_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +500,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4713105273086996}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,7 +515,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4746929079340462}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Ctrl_RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,7 +530,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4986292587694386}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +545,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4154912951877446}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,7 +560,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4858574860179798}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +575,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4252136551060286}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,7 +590,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4162571343986508}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:LeftShoulder 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -605,7 +605,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4725871129138532}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -620,7 +620,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4631830334827938}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,7 +635,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4944586630039710}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:LeftElbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -650,7 +650,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4929639561330632}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:ChestOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,7 +665,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4238608294881274}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Ctrl_Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -680,7 +680,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4009106689221116}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:RightKnee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -695,7 +695,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4351734315862646}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:joints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,7 +710,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4877708999820302}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:LeftKnee 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -725,7 +725,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4128974774930058}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -740,7 +740,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4882664205398532}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:Reference
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -755,7 +755,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4397405243535984}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,7 +770,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4951869314649398}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -785,7 +785,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4058074068068728}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:LeftFoot 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -800,7 +800,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4480086233684898}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -821,9 +821,9 @@ GameObject:
   - component: {fileID: 114076142626003520}
   - component: {fileID: 114958360036153538}
   - component: {fileID: 114379058290627138}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: PlayerClone
-  m_TagString: Player
+  m_TagString: Clone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -836,7 +836,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4763748465226344}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -851,7 +851,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4783935245877246}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:LeftWrist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -866,7 +866,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4488238230182838}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Ctrl_RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -881,7 +881,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4283599883886380}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Ctrl_LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -896,7 +896,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4699166661787360}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Ctrl_Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -911,7 +911,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4658940942618178}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -926,7 +926,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4897326948027284}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Ctrl_RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -941,7 +941,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4636308511418598}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -956,7 +956,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4557991484912828}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -971,7 +971,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4903452800089494}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -986,7 +986,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4052551518028492}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1001,7 +1001,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4818747783554826}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:RightFoot 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1016,7 +1016,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4657022067205734}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1031,7 +1031,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4517612686053550}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:LeftLeg 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1046,7 +1046,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4786278296656310}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1061,7 +1061,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4094495733344214}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1076,7 +1076,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4463610367439410}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1091,7 +1091,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4579435250062028}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1106,7 +1106,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4473485835732088}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1121,7 +1121,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4286754502876804}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:LeftFoot 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1136,7 +1136,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4157691730848658}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1151,7 +1151,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4763342180088598}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1166,7 +1166,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4176301664476680}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1181,7 +1181,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4852771217872916}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Reference
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1196,7 +1196,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4660171865254802}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1211,7 +1211,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4713732993870356}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Ctrl_RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1226,7 +1226,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4805588692970040}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Ctrl_LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1241,7 +1241,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4340757380120884}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1256,7 +1256,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4220563826579908}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1271,7 +1271,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4741856185397386}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:Hips 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1286,7 +1286,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4420801834761168}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:RightWrist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1301,7 +1301,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4210831392077948}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:RightElbow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1316,7 +1316,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4678244729627812}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Ctrl_LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1331,7 +1331,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4272176909911790}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:RightAnkle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1346,7 +1346,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4828653360100588}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:LeftKnee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1361,7 +1361,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4615512319835100}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: stickdude_model:QuickRigCharacter_Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2690,7 +2690,10 @@ MonoBehaviour:
   interactMask:
     serializedVersion: 2
     m_Bits: 768
-  verticalClimbAngle: 0
+  suffocateTime: 3.09
+  crushTime: 1.08
+  canMove: 0
+  hasBucket: 0
 --- !u!114 &114379058290627138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2719,6 +2722,10 @@ MonoBehaviour:
     m_Bits: 512
   interactVertOffset: 1.25
   interactCameraDistance: 2.25
+  suffocateTime: 0
+  crushTime: 0
+  canMove: 0
+  hasBucket: 0
   verticalClimbAngle: 0
 --- !u!114 &114958360036153538
 MonoBehaviour:

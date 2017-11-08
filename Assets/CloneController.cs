@@ -20,6 +20,8 @@ public class CloneController : MonoBehaviour
     [SerializeField] private LayerMask interactMask;
     [SerializeField] private float interactVertOffset;
     [SerializeField] private float interactCameraDistance;
+    [SerializeField] private float suffocateTime;
+    [SerializeField] private float crushTime;
 
     public bool canMove;
     public bool hasBucket;
@@ -47,7 +49,7 @@ public class CloneController : MonoBehaviour
         grounded = false;
         canMove = true;
         hasBucket = false;
-        originalPos = transform.position;
+        originalPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         originalRot = transform.rotation;
         vertComp = new Vector3(0, -1/Mathf.Tan(verticalClimbAngle), 0);
     }
@@ -189,7 +191,14 @@ public class CloneController : MonoBehaviour
 
     public void die()
     {
-        gameObject.SetActive(false);
+        canMove = false;
+        StartCoroutine(dieWait());
+    }
+    
+    public void crush()
+    {
+        canMove = false;
+        StartCoroutine(crushWait());
     }
 
     public void reset()
@@ -197,10 +206,26 @@ public class CloneController : MonoBehaviour
         record.reset();
         transform.position = originalPos;
         transform.rotation = originalRot;
-        canMove = true;
         hasBucket = false;
         gameObject.SetActive(true);
         rb.velocity = Vector3.zero;
         canMove = true;
+    }
+    
+    public void setOriginalPos(Vector3 pos)
+    {
+        originalPos = new Vector3(pos.x, pos.y, pos.z);
+    }
+    
+    IEnumerator dieWait()
+    {
+        yield return new WaitForSeconds(suffocateTime);
+        gameObject.SetActive(false);
+    }
+    
+    IEnumerator crushWait()
+    {
+        yield return new WaitForSeconds(crushTime);
+        gameObject.SetActive(false);
     }
 }
