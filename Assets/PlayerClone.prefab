@@ -818,7 +818,6 @@ GameObject:
   - component: {fileID: 95498104146523848}
   - component: {fileID: 54449644519390036}
   - component: {fileID: 136335367101357678}
-  - component: {fileID: 114076142626003520}
   - component: {fileID: 114958360036153538}
   - component: {fileID: 114379058290627138}
   m_Layer: 10
@@ -2664,33 +2663,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114076142626003520
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1600156557343312}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eedfa8af79d03374b9dede7e9e3d9e64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 10
-  lookSensitivity: 8
-  physicsCutoff: 0.5
-  maxAccel: 50
-  airAccel: 20
-  jumpHeight: 1
-  castHeight: -0
-  castRadius: 0.125
-  castMask:
-    serializedVersion: 2
-    m_Bits: 257
-  interactDistance: 3.25
-  interactMask:
-    serializedVersion: 2
-    m_Bits: 768
-  verticalClimbAngle: 0
 --- !u!114 &114379058290627138
 MonoBehaviour:
   m_ObjectHideFlags: 1

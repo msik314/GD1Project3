@@ -23,8 +23,8 @@ public class TextboxScript : MonoBehaviour {
 	void Start () {
 		timer = 0;
 		curText = textBox.GetComponentInChildren<Text> ();
-		textBox.GetComponent<Image>().CrossFadeAlpha(0,1,false);
-		curText.CrossFadeAlpha(0,1,false);
+		textBox.GetComponent<Image>().CrossFadeAlpha(0,0,false);
+		curText.CrossFadeAlpha(0,0,false);
 
 	}
 
