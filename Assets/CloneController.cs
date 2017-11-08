@@ -185,6 +185,8 @@ public class CloneController : MonoBehaviour
         record.reset();
         transform.position = originalPos;
         transform.rotation = originalRot;
+        canMove = true;
+        hasBucket = false;
         gameObject.SetActive(true);
         rb.velocity = Vector3.zero;
         canMove = true;

@@ -7,7 +7,7 @@ public class CloneManager : MonoBehaviour
     [SerializeField] private float maxLife;
     [SerializeField] private GameObject clone;
     [SerializeField] int livesBeforeReset;
-    
+
     private float life;
     private MovementController player;
     private MovementRecord playerMr;
