@@ -156,7 +156,8 @@ public class CloneController : MonoBehaviour
         Vector3 scale = transform.localScale;
         transform.localScale = Vector3.one;
         if (hasBucket){
-            throwWater();
+			throwWater();
+			anim.SetBool ("bucket", hasBucket);
         }
         else{
             
@@ -173,7 +174,9 @@ public class CloneController : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag == "Interactable")
                 {
-                    hit.collider.gameObject.GetComponent<InteractControl>().doInteraction(this.transform);
+					hit.collider.gameObject.GetComponent<InteractControl>().doInteraction(this.transform);
+					anim.SetBool ("bucket", hasBucket);
+					anim.SetBool ("deb", canMove);
                 }
             }
         }
@@ -199,12 +202,14 @@ public class CloneController : MonoBehaviour
 
     public void die()
     {
+		anim.SetBool ("death", true);
         canMove = false;
         StartCoroutine(dieWait());
     }
     
     public void crush()
     {
+		anim.SetBool ("death", true);
         canMove = false;
         StartCoroutine(crushWait());
     }

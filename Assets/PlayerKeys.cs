@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerKeys : MonoBehaviour {
 
-	int keyNum;
+	public int keyNum;
 	[SerializeField] GameObject key;
 	[SerializeField] UIScript ui;
 
@@ -18,14 +18,15 @@ public class PlayerKeys : MonoBehaviour {
 			Destroy (col.gameObject);
 			keyNum++;
 			ui.pickUpKey ();
-			print ("FOUND A KLEY");
 		}
 	}
 
 	public void reset(){
-		print ("OH NO");
 		ui.noMoreKeys ();
-		Instantiate (key, transform.position,transform.rotation);
+		for (int i = 0; i < keyNum; i++) {
+			Instantiate (key, new Vector3 (transform.position.x, transform.position.y + 1, transform.position.z), transform.rotation);
+		}
+		keyNum = 0;
 	}
 
 	// Update is called once per frame

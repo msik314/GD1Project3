@@ -1,0 +1,47 @@
+diff a/Assets/Bucket.cs b/Assets/Bucket.cs	(rejected hunks)
+@@ -0,0 +1,45 @@
++﻿using System.Collections;
++using System.Collections.Generic;
++using UnityEngine;
++
++public class Bucket : InteractControl {
++
++    public Vector3 startPos;
++
++    private bool isClone = false;
++    private bool isPlayer = false;
++    private MovementController user;
++    private CloneController clone;
++
++    private bool isGrabbed = false;
++	// Use this for initialization
++	void Start () {
++		
++	}
++	
++	// Update is called once per frame
++	void Update () {
++
++	}
++
++    public override void doInteraction(Transform player){
++            if (player.gameObject.tag == "Player")
++            {
++                user = player.gameObject.GetComponent<MovementController>();
++                user.hasBucket = true;
++                isPlayer = true;
++
++            }
++            else if (player.gameObject.tag == "Clone")
++            {
++                clone = player.gameObject.GetComponent<CloneController>();
++                clone.hasBucket = true;
++                isClone = true;
++            }
++            gameObject.SetActive(false);
++    }
++
++    public void reset(){
++        gameObject.SetActive(true); 
++    }
++}
