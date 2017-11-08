@@ -32,6 +32,7 @@ public class FireControl : InteractControl {
         }
         else if (vulnerable){
             print("out");
+            gameObject.SetActive(false);
         }
     }
 
