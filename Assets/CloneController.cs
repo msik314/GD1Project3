@@ -18,8 +18,8 @@ public class CloneController : MonoBehaviour
     [SerializeField] private LayerMask castMask;
     [SerializeField] private float interactDistance;
     [SerializeField] private LayerMask interactMask;
-    [SerializeField] private Vector3 interactOffset;
-    [SerializeField] private Vector3 interactEuler;
+    [SerializeField] private float interactVertOffset;
+    [SerializeField] private float interactCameraDistance;
 
     private float jumpVel;
     private bool grounded;
@@ -27,7 +27,7 @@ public class CloneController : MonoBehaviour
     private Rigidbody rb;
     private Vector3 originalPos;
     private Quaternion originalRot;
-    private bool canMove;
+    private Vector2 rot;
 
     // Use this for initialization
     void Awake()
@@ -45,7 +45,6 @@ public class CloneController : MonoBehaviour
     {
 
         Vector3 targetVel;
-        Quaternion rot;
         bool jumping = false;
         bool interacting = false;
         byte actions = record.getTarget(out targetVel, out rot);
@@ -60,8 +59,8 @@ public class CloneController : MonoBehaviour
             interacting = (actions & 2) != 0;
         }
 
-        transform.rotation = rot;
-
+        transform.rotation = Quaternion.Euler(0, rot.y, 0);
+        
         if(interacting)
         {
             interact();
@@ -135,8 +134,11 @@ public class CloneController : MonoBehaviour
 
     void interact()
     {
-        Vector3 p = transform.TransformPoint(interactOffset + new Vector3(0, 0, Camera.main.nearClipPlane));
-        Vector3 d = transform.rotation * Quaternion.Euler(interactEuler) * Vector3.forward;
+
+
+        Vector3 p = new Vector3(0, 0, Camera.main.nearClipPlane - interactCameraDistance);
+        p = transform.TransformPoint(new Vector3(0, interactVertOffset, 0) + (Quaternion.Euler(rot.x, 0, 0) * p));
+        Vector3 d = transform.rotation * Quaternion.Euler(rot.x, 0, 0) * Vector3.forward;
         RaycastHit hit;
         bool hasHit = Physics.Raycast(p, d, out hit, interactDistance, interactMask);
         if(hasHit)
@@ -159,5 +161,6 @@ public class CloneController : MonoBehaviour
         transform.position = originalPos;
         transform.rotation = originalRot;
         gameObject.SetActive(true);
+        rb.velocity = Vector3.zero;
     }
 }

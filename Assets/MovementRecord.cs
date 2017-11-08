@@ -5,20 +5,20 @@ using UnityEngine;
 public class MovementRecord : MonoBehaviour
 {
     private List<Vector3> targetVelocities;
-    private List<Quaternion> targetOrientations;
+    private List<Vector2> targetOrientations;
     private List<byte> actions;
     private int index;
     
     public void init()
     {
         targetVelocities = new List<Vector3>();
-        targetOrientations = new List<Quaternion>();
+        targetOrientations = new List<Vector2>();
         actions = new List<byte>();
         index = 0;
     }
     
     
-    public byte getTarget(out Vector3 target, out Quaternion orientation)
+    public byte getTarget(out Vector3 target, out Vector2 orientation)
     {
         if(index < 0 || index >= targetVelocities.Count)
         {
@@ -35,7 +35,7 @@ public class MovementRecord : MonoBehaviour
         }
     }
     
-    public void addTarget(Vector3 target, Quaternion orientation, byte acting)
+    public void addTarget(Vector3 target, Vector2 orientation, byte acting)
     {
         targetVelocities.Add(target);
         targetOrientations.Add(orientation);
@@ -50,11 +50,11 @@ public class MovementRecord : MonoBehaviour
     public void clear()
     {
         targetVelocities = new List<Vector3>();
-        targetOrientations = new List<Quaternion>();
+        targetOrientations = new List<Vector2>();
         actions = new List<byte>();
     }
     
-    public void getLists(out List<Vector3> targets, out List<Quaternion> orientations, out List<byte>actionsOut)
+    public void getLists(out List<Vector3> targets, out List<Vector2> orientations, out List<byte>actionsOut)
     {
         targets = targetVelocities;
         orientations = targetOrientations;
