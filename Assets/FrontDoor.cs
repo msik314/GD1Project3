@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FrontDoor : InteractControl {
 
@@ -21,7 +22,7 @@ public class FrontDoor : InteractControl {
             if (player.gameObject.GetComponent<PlayerKeys>().keyNum >= 3)
             {
                 print("game's done!");
-                //code to load next scene here
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }
