@@ -17,6 +17,7 @@ public class MovementController : MonoBehaviour
     [SerializeField] private LayerMask castMask;
     [SerializeField] private float interactDistance;
     [SerializeField] private LayerMask interactMask;
+    [SerializeField] private float verticalClimbAngle;
     
     private Quaternion originalRot;
     private Vector3 originalPos;
@@ -28,6 +29,7 @@ public class MovementController : MonoBehaviour
     private bool interacting;
     private float jumpVel;
     private  CloneManager manager;
+    private Vector3 vertComp;
     
     // Use this for initialization
     void Awake()
@@ -40,6 +42,7 @@ public class MovementController : MonoBehaviour
         targetVel = Vector3.zero;
         originalPos = transform.position;
         originalRot = transform.rotation;
+        vertComp = new Vector3(0, -1/Mathf.Tan(verticalClimbAngle), 0);
     }
     
     // Update is called once per frame
@@ -112,7 +115,7 @@ public class MovementController : MonoBehaviour
         }
         else if(grounded && difference.sqrMagnitude > maxAccel * maxAccel * Time.fixedDeltaTime * Time.fixedDeltaTime)
         {
-            rb.AddForce(difference.normalized * maxAccel, ForceMode.Acceleration);
+            rb.AddForce((difference.normalized + vertComp) * maxAccel, ForceMode.Acceleration);
         }
         else if(difference.sqrMagnitude > airAccel * airAccel * Time.fixedDeltaTime * Time.fixedDeltaTime)
         {

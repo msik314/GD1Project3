@@ -20,6 +20,7 @@ public class CloneController : MonoBehaviour
     [SerializeField] private LayerMask interactMask;
     [SerializeField] private float interactVertOffset;
     [SerializeField] private float interactCameraDistance;
+    [SerializeField] private float verticalClimbAngle;
     
     private float jumpVel;
     private bool grounded;
@@ -28,6 +29,7 @@ public class CloneController : MonoBehaviour
     private Vector3 originalPos;
     private Quaternion originalRot;
     private Vector2 rot;
+    private Vector3 vertComp;
     
     // Use this for initialization
     void Awake()
@@ -38,6 +40,7 @@ public class CloneController : MonoBehaviour
         grounded = false;
         originalPos = transform.position;
         originalRot = transform.rotation;
+        vertComp = new Vector3(0, -1/Mathf.Tan(verticalClimbAngle), 0);
     }
     
     // Update is called once per frame
@@ -80,7 +83,7 @@ public class CloneController : MonoBehaviour
         }
         else if(grounded && difference.sqrMagnitude > maxAccel * maxAccel * Time.fixedDeltaTime * Time.fixedDeltaTime)
         {
-            rb.AddForce(difference.normalized * maxAccel, ForceMode.Acceleration);
+            rb.AddForce((difference.normalized + vertComp) * maxAccel, ForceMode.Acceleration);
         }
         else if(difference.sqrMagnitude > airAccel * airAccel * Time.fixedDeltaTime * Time.fixedDeltaTime)
         {
