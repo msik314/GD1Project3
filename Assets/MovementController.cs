@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(MovementRecord))]
 public class MovementController : MonoBehaviour
@@ -27,11 +28,13 @@ public class MovementController : MonoBehaviour
     private bool jumping;
     private bool interacting;
     private float jumpVel;
+	private Animator anim;
     private  CloneManager manager;
     
     // Use this for initialization
     void Awake()
     {
+		anim = GetComponent<Animator> ();
         rb = GetComponent<Rigidbody>();
         record = GetComponent<MovementRecord>();
         record.init();
@@ -67,6 +70,7 @@ public class MovementController : MonoBehaviour
         {
             manager.reset();
         }
+
     }
     
     void FixedUpdate()
@@ -129,11 +133,27 @@ public class MovementController : MonoBehaviour
             rb.AddForce(Vector3.up * (jumpVel - rb.velocity.y), ForceMode.VelocityChange);
         }
         jumping = false;
+
+		float totalVelocity = Mathf.Abs(targetVel.x) + Mathf.Abs(targetVel.y) + Mathf.Abs(targetVel.z);
+		print (grounded);
+
+		if (Input.GetKeyDown (KeyCode.U)) {
+			GameObject testing = GameObject.CreatePrimitive (PrimitiveType.Sphere);
+			Destroy(testing.GetComponent<Rigidbody> ());
+			testing.transform.localScale = testing.transform.localScale * castRadius;
+			print (castHeight);
+			testing.transform.position = new Vector3 (transform.position.x, transform.position.y + castHeight, transform.position.z);
+
+		}
+
+
+		anim.SetFloat ("curVelocity", totalVelocity);
     }
     
     void OnCollisionEnter(Collision col)
     {
-        if(Physics.CheckSphere(transform.TransformPoint(new Vector3(0, castHeight, 0)), castRadius, castMask))
+		
+		if(Physics.CheckSphere(new Vector3(transform.position.x, transform.position.y + castHeight, transform.position.z), castRadius))
         {
             grounded = true;
         }

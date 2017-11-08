@@ -28,5 +28,7 @@ public class UIScript : MonoBehaviour {
 				lives.transform.position.y / 2 +
 				key.GetComponent<RectTransform> ().rect.height, 0);
 		}
+
+		key.SetActive (false);
 	}
 }
