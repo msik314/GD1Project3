@@ -43,7 +43,7 @@ public class UIScript : MonoBehaviour {
 	private void loadKeys(){
 		for (int i = 0; i < curKeyNum; i++) {
 			if (keys.Count <= i) {
-				GameObject tempKey = Instantiate (key, key.transform.parent);
+				GameObject tempKey = Instantiate (key, transform);
 				keys.Add (tempKey);
 			} 
 				keys [i].SetActive (true);
