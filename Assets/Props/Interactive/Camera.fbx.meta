@@ -1,13 +1,30 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 344b12f68178a7a478cf9d437fa6e200
 timeCreated: 1510116066
+=======
+guid: 5a5e3d048406df64dbc86a912b88b7a5
+timeCreated: 1510116306
+>>>>>>> c40d7edba5b52d7b51eac5dcf75d6fc230c8c45b
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
+<<<<<<< HEAD
   externalObjects: {}
+=======
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pCube6
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 642cc3af33ea94348a2b7cbcfd67d992, type: 2}
+>>>>>>> c40d7edba5b52d7b51eac5dcf75d6fc230c8c45b
   materials:
     importMaterials: 1
     materialName: 0
