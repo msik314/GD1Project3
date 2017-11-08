@@ -2474,8 +2474,8 @@ MonoBehaviour:
   interactMask:
     serializedVersion: 2
     m_Bits: 768
-  suffocateTime: 0
-  crushTime: 0
+  suffocateTime: 3.09
+  crushTime: 1.08
   canMove: 0
   hasBucket: 0
 --- !u!114 &1969049985
