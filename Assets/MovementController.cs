@@ -202,6 +202,8 @@ public class MovementController : MonoBehaviour
     {
         if (hasBucket) {
             throwWater();
+			anim.SetBool ("bucket", hasBucket);
+
         }
         else{
             Ray r = Camera.main.ScreenPointToRay(new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2, 0));
@@ -212,6 +214,8 @@ public class MovementController : MonoBehaviour
                 if (hit.collider.gameObject.tag == "Interactable")
                 {
                     hit.collider.gameObject.GetComponent<InteractControl>().doInteraction(this.transform);
+					anim.SetBool ("bucket", hasBucket);
+					anim.SetBool ("deb", canMove);
                 }
             }
         }
@@ -231,13 +235,15 @@ public class MovementController : MonoBehaviour
     
     public void die()
     {
+		anim.SetBool ("death", true);
         canMove = false;
         canRotate = false;
         StartCoroutine(dieWait());
     }
     
     public void crush()
-    {
+	{
+		anim.SetBool ("death", true);
         canMove = false;
         canRotate = false;
         StartCoroutine(crushWait());
@@ -245,6 +251,9 @@ public class MovementController : MonoBehaviour
     
     public void reset()
     {
+
+		anim.SetBool ("death", false);
+		anim.Play ("Idle");
         record.clear();
         canMove = true;
         canRotate = true;
