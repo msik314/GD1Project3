@@ -5,6 +5,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(MovementRecord))]
+[RequireComponent(typeof(AudioSource))]
 public class MovementController : MonoBehaviour
 {
     [SerializeField] private float maxSpeed;
@@ -20,6 +21,7 @@ public class MovementController : MonoBehaviour
     [SerializeField] private LayerMask interactMask;
     [SerializeField] private float suffocateTime;
     [SerializeField] private float crushTime;
+    [SerializeField] private float verticalClimbAngle;
 
     public bool canMove;
     public bool hasBucket;
@@ -35,9 +37,10 @@ public class MovementController : MonoBehaviour
     private bool interacting;
     private float jumpVel;
 	private Animator anim;
-    private  CloneManager manager;
-
+    private CloneManager manager;
+    private AudioSource source;
     private InteractControl interactScript;
+    private Vector3 vertComp;
     
     // Use this for initialization
     void Awake()
@@ -54,6 +57,8 @@ public class MovementController : MonoBehaviour
         targetVel = Vector3.zero;
         originalPos = transform.position;
         originalRot = transform.rotation;
+        vertComp = new Vector3(0, -1/Mathf.Tan(verticalClimbAngle), 0);
+        source = GetComponent<AudioSource>();
     }
     
     // Update is called once per frame
@@ -136,7 +141,7 @@ public class MovementController : MonoBehaviour
         }
         else if(grounded && difference.sqrMagnitude > maxAccel * maxAccel * Time.fixedDeltaTime * Time.fixedDeltaTime)
         {
-            rb.AddForce(difference.normalized * maxAccel, ForceMode.Acceleration);
+            rb.AddForce((difference.normalized + vertComp) * maxAccel, ForceMode.Acceleration);
         }
         else if(difference.sqrMagnitude > airAccel * airAccel * Time.fixedDeltaTime * Time.fixedDeltaTime)
         {
@@ -236,6 +241,7 @@ public class MovementController : MonoBehaviour
     
     public void die()
     {
+        source.Play();
 		anim.SetBool ("death", true);
         canMove = false;
         canRotate = false;
@@ -254,6 +260,7 @@ public class MovementController : MonoBehaviour
     {
 		anim.SetBool ("bucket", false);
 		anim.SetBool ("deb", false);
+        source.Stop();
 		anim.SetBool ("death", false);
 		anim.Play ("Idle");
         record.clear();
