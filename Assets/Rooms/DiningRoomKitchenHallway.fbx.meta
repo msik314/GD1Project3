@@ -11,6 +11,7 @@ ModelImporter:
     3300000: //RootNode
     4300000: pCube81
     4300002: pCube82
+    4300004: polySurface61
   externalObjects:
   - first:
       type: UnityEngine:Material

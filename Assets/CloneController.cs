@@ -24,6 +24,8 @@ public class CloneController : MonoBehaviour
     public bool canMove;
     public bool hasBucket;
 
+    [SerializeField] private float verticalClimbAngle;
+    
     private float jumpVel;
     private bool grounded;
     private MovementRecord record;
@@ -31,10 +33,14 @@ public class CloneController : MonoBehaviour
     private Vector3 originalPos;
     private Quaternion originalRot;
     private Vector2 rot;
+	private Animator anim;
+
+    private Vector3 vertComp;
 
     // Use this for initialization
     void Awake()
     {
+		anim = GetComponent<Animator> ();
         rb = GetComponent<Rigidbody>();
         record = GetComponent<MovementRecord>();
         jumpVel = Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * jumpHeight);
@@ -43,6 +49,7 @@ public class CloneController : MonoBehaviour
         hasBucket = false;
         originalPos = transform.position;
         originalRot = transform.rotation;
+        vertComp = new Vector3(0, -1/Mathf.Tan(verticalClimbAngle), 0);
     }
 
     // Update is called once per frame
@@ -65,7 +72,7 @@ public class CloneController : MonoBehaviour
         }
 
         transform.rotation = Quaternion.Euler(0, rot.y, 0);
-        
+
         if(interacting)
         {
             interact();
@@ -92,7 +99,7 @@ public class CloneController : MonoBehaviour
         }
         else if(grounded && difference.sqrMagnitude > maxAccel * maxAccel * Time.fixedDeltaTime * Time.fixedDeltaTime)
         {
-            rb.AddForce(difference.normalized * maxAccel, ForceMode.Acceleration);
+            rb.AddForce((difference.normalized + vertComp) * maxAccel, ForceMode.Acceleration);
         }
         else if(difference.sqrMagnitude > airAccel * airAccel * Time.fixedDeltaTime * Time.fixedDeltaTime)
         {
@@ -108,9 +115,14 @@ public class CloneController : MonoBehaviour
             grounded = false;
             rb.AddForce(Vector3.up * (jumpVel - rb.velocity.y), ForceMode.VelocityChange);
         }
+
+
+
+		float totalVelocity = Mathf.Abs(targetVel.x) + Mathf.Abs(targetVel.y) + Mathf.Abs(targetVel.z);
+		anim.SetFloat ("curVelocity", totalVelocity);
     }
 
-    void OnCollisionEnter(Collision col)
+    void OnCollisionStay(Collision col)
     {
         if(Physics.CheckSphere(transform.TransformPoint(new Vector3(0, castHeight, 0)), castRadius, castMask))
         {
@@ -156,7 +168,7 @@ public class CloneController : MonoBehaviour
                     hit.collider.gameObject.GetComponent<InteractControl>().doInteraction(this.transform);
                 }
             }
-        }  
+        }
     }
 
     void throwWater(){
