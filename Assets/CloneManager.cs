@@ -15,7 +15,7 @@ public class CloneManager : MonoBehaviour
     [SerializeField]private List <CloneController> ccs;
     private Vector3 originalPos;
     private Quaternion originalRot;
-    
+
     // Use this for initialization
     void Awake()
     {
@@ -29,7 +29,7 @@ public class CloneManager : MonoBehaviour
         originalPos = player.transform.position;
         originalRot = player.transform.rotation;
     }
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -39,7 +39,7 @@ public class CloneManager : MonoBehaviour
             cycle();
         }
     }
-    
+
     public void cycle()
     {
         if(ccs.Count >= livesBeforeReset - 1)
@@ -78,12 +78,12 @@ public class CloneManager : MonoBehaviour
 	{
 		return livesBeforeReset-ccs.Count;
 	}
-    
+
     void clear()
     {
         ccs.Clear();
     }
-    
+
     public void reset()
     {
         for(int i = ccs.Count - 1; i >= 0; --i)

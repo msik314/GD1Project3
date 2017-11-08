@@ -7,12 +7,12 @@ InputManager:
   m_Axes:
   - serializedVersion: 3
     m_Name: Vertical
-    descriptiveName: 
-    descriptiveNegativeName: 
+    descriptiveName:
+    descriptiveNegativeName:
     negativeButton: s
     positiveButton: w
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0
     sensitivity: 100
@@ -23,12 +23,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Horizontal
-    descriptiveName: 
-    descriptiveNegativeName: 
+    descriptiveName:
+    descriptiveNegativeName:
     negativeButton: a
     positiveButton: d
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0
     sensitivity: 1000
@@ -39,12 +39,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Interact
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: e
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0
     sensitivity: 1000
@@ -55,12 +55,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Jump
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: space
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0
     sensitivity: 1000
@@ -71,11 +71,11 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Submit
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: space
-    altNegativeButton: 
+    altNegativeButton:
     altPositiveButton: enter
     gravity: 1000
     dead: 0
@@ -87,12 +87,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Pause
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: escape
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0
     sensitivity: 1000
@@ -103,12 +103,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: MouseX
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
     gravity: 0
     dead: 0.1
     sensitivity: 10
@@ -119,12 +119,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: MouseY
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
+    positiveButton:
+    altNegativeButton:
+    altPositiveButton:
     gravity: 0
     dead: 0.1
     sensitivity: 10
@@ -135,11 +135,11 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Cancel
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: escape
-    altNegativeButton: 
+    altNegativeButton:
     altPositiveButton: backspace
     gravity: 1000
     dead: 0.1
@@ -151,12 +151,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Reset
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
+    descriptiveName:
+    descriptiveNegativeName:
+    negativeButton:
     positiveButton: r
-    altNegativeButton: 
-    altPositiveButton: 
+    altNegativeButton:
+    altPositiveButton:
     gravity: 1000
     dead: 0.1
     sensitivity: 1000
