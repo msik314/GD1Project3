@@ -21,6 +21,9 @@ public class CloneController : MonoBehaviour
     [SerializeField] private float interactVertOffset;
     [SerializeField] private float interactCameraDistance;
 
+    public bool canMove;
+    public bool hasBucket;
+
     private float jumpVel;
     private bool grounded;
     private MovementRecord record;
@@ -36,6 +39,8 @@ public class CloneController : MonoBehaviour
         record = GetComponent<MovementRecord>();
         jumpVel = Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * jumpHeight);
         grounded = false;
+        canMove = true;
+        hasBucket = false;
         originalPos = transform.position;
         originalRot = transform.rotation;
     }
@@ -135,19 +140,39 @@ public class CloneController : MonoBehaviour
     void interact()
     {
 
+        if (hasBucket){
+            throwWater();
+        }
+        else{
+            Vector3 p = new Vector3(0, 0, Camera.main.nearClipPlane - interactCameraDistance);
+            p = transform.TransformPoint(new Vector3(0, interactVertOffset, 0) + (Quaternion.Euler(rot.x, 0, 0) * p));
+            Vector3 d = transform.rotation * Quaternion.Euler(rot.x, 0, 0) * Vector3.forward;
+            RaycastHit hit;
+            bool hasHit = Physics.Raycast(p, d, out hit, interactDistance, interactMask);
+            if (hasHit)
+            {
+                if (hit.collider.gameObject.tag == "Interactable")
+                {
+                    hit.collider.gameObject.GetComponent<InteractControl>().doInteraction(this.transform);
+                }
+            }
+        }  
+    }
 
+    void throwWater(){
         Vector3 p = new Vector3(0, 0, Camera.main.nearClipPlane - interactCameraDistance);
         p = transform.TransformPoint(new Vector3(0, interactVertOffset, 0) + (Quaternion.Euler(rot.x, 0, 0) * p));
         Vector3 d = transform.rotation * Quaternion.Euler(rot.x, 0, 0) * Vector3.forward;
         RaycastHit hit;
         bool hasHit = Physics.Raycast(p, d, out hit, interactDistance, interactMask);
-        if(hasHit)
+        if (hasHit)
         {
-            if(hit.collider.gameObject.tag == "Interactable")
+            if (hit.collider.gameObject.tag == "Fire")
             {
-                hit.collider.gameObject.GetComponent<InteractControl>().doInteraction(this.transform) ;//temporary
+                hit.collider.gameObject.GetComponent<InteractControl>().doInteraction(this.transform);
             }
         }
+        hasBucket = false;
     }
 
     public void die()
@@ -162,5 +187,6 @@ public class CloneController : MonoBehaviour
         transform.rotation = originalRot;
         gameObject.SetActive(true);
         rb.velocity = Vector3.zero;
+        canMove = true;
     }
 }

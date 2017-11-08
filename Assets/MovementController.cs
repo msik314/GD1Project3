@@ -19,6 +19,7 @@ public class MovementController : MonoBehaviour
     [SerializeField] private LayerMask interactMask;
 
     public bool canMove;
+    public bool hasBucket;
 
     private Quaternion originalRot;
     private Vector3 originalPos;
@@ -42,6 +43,7 @@ public class MovementController : MonoBehaviour
         jumpVel = Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * jumpHeight);
         grounded = false;
         canMove = true;
+        hasBucket = false;
         targetVel = Vector3.zero;
         originalPos = transform.position;
         originalRot = transform.rotation;
@@ -172,18 +174,34 @@ public class MovementController : MonoBehaviour
     
     void interact()
     {
-        Ray r = Camera.main.ScreenPointToRay(new Vector3(Camera.main.pixelWidth/2, Camera.main.pixelHeight/2, 0));
-        RaycastHit hit;
-        bool hasHit = Physics.Raycast(r, out hit, interactDistance, interactMask);
-        if(hasHit)
-        {
-            if(hit.collider.gameObject.tag == "Interactable")
+        if (hasBucket) {
+            throwWater();
+        }
+        else{
+            Ray r = Camera.main.ScreenPointToRay(new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2, 0));
+            RaycastHit hit;
+            bool hasHit = Physics.Raycast(r, out hit, interactDistance, interactMask);
+            if (hasHit)
             {
-                hit.collider.gameObject.GetComponent<InteractControl>().doInteraction(this.transform);
+                if (hit.collider.gameObject.tag == "Interactable")
+                {
+                    hit.collider.gameObject.GetComponent<InteractControl>().doInteraction(this.transform);
+                }
             }
         }
     }
     
+    void throwWater(){
+        Ray r = Camera.main.ScreenPointToRay(new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2, 0));
+        RaycastHit hit;
+        bool hasHit = Physics.Raycast(r, out hit, interactDistance, interactMask);
+        if (hasHit){
+            if(hit.collider.gameObject.tag == "Fire"){
+                hit.collider.gameObject.GetComponent<InteractControl>().doInteraction(this.transform);
+            }
+        }
+        hasBucket = false;
+    }
     
     public void die()
     {
@@ -194,6 +212,7 @@ public class MovementController : MonoBehaviour
     {
         record.clear();
         canMove = true;
+        hasBucket = false;
         transform.position = originalPos;
         transform.rotation = originalRot;
         rb.velocity = Vector3.zero;

@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114047865534277332}
   m_Layer: 11
   m_Name: Clone
-  m_TagString: Untagged
+  m_TagString: Clone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,8 +127,10 @@ MonoBehaviour:
   interactMask:
     serializedVersion: 2
     m_Bits: 768
-  interactVertOffset: 1.25
-  interactCameraDistance: 2.25
+  interactVertOffset: 0
+  interactCameraDistance: 0
+  canMove: 0
+  hasBucket: 0
 --- !u!114 &114493178562924624
 MonoBehaviour:
   m_ObjectHideFlags: 1

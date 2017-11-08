@@ -10,7 +10,10 @@ public class Debri : InteractControl {
 
     private bool goingUp = false;
     private bool goingDown = false;
+    private bool isClone = false;
+    private bool isPlayer = false;
     private MovementController user;
+    private CloneController clone;
     private float timeStart;
     
     private float i = 0;
@@ -27,7 +30,14 @@ public class Debri : InteractControl {
             if(Time.time - timeStart > duration){
                 goingUp = false;
                 goingDown = true;
-                user.die();
+                if (isPlayer){
+                    user.die();
+                    isPlayer = false;
+                }
+                else if (isClone){
+                    clone.die();
+                    isClone = false;
+                }
                 i = 0;
             }
         }
@@ -44,10 +54,28 @@ public class Debri : InteractControl {
     public override void doInteraction(Transform player){
         if (!goingUp && !goingDown){
             goingUp = true;
-            user = player.gameObject.GetComponent<MovementController>();
-            user.canMove = false;
+            if(player.gameObject.tag == "Player")
+            {
+                user = player.gameObject.GetComponent<MovementController>();
+                user.canMove = false;
+                isPlayer = true;
+
+            }
+            else if (player.gameObject.tag == "Clone")
+            {
+                clone = player.gameObject.GetComponent<CloneController>();
+                clone.canMove = false;
+                isClone = true;
+            }
+            i = 0;
             timeStart = Time.time;
         }
 		
 	}
+
+    public void reset(){
+        transform.position = down;
+        goingUp = false;
+        goingDown = true;
+    }
 }

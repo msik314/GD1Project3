@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Bucket : InteractControl {
 
+    public Vector3 startPos;
+
+    private bool isClone = false;
+    private bool isPlayer = false;
+    private MovementController user;
+    private CloneController clone;
+
     private bool isGrabbed = false;
 	// Use this for initialization
 	void Start () {
@@ -12,16 +19,27 @@ public class Bucket : InteractControl {
 	
 	// Update is called once per frame
 	void Update () {
+
 	}
 
     public override void doInteraction(Transform player){
-        if (!isGrabbed){
-            transform.position = player.position + new Vector3(0,5,0);
-            transform.parent = player;
-            isGrabbed = true;
-        }
-        if (isGrabbed){
+            if (player.gameObject.tag == "Player")
+            {
+                user = player.gameObject.GetComponent<MovementController>();
+                user.hasBucket = true;
+                isPlayer = true;
 
-        }
+            }
+            else if (player.gameObject.tag == "Clone")
+            {
+                clone = player.gameObject.GetComponent<CloneController>();
+                clone.hasBucket = true;
+                isClone = true;
+            }
+            gameObject.SetActive(false);
+    }
+
+    public void reset(){
+        gameObject.SetActive(true); 
     }
 }
