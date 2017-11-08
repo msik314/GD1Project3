@@ -41,6 +41,7 @@ public class MovementController : MonoBehaviour
     private AudioSource source;
     private InteractControl interactScript;
     private Vector3 vertComp;
+    private bool dead;
     
     // Use this for initialization
     void Awake()
@@ -59,6 +60,7 @@ public class MovementController : MonoBehaviour
         originalRot = transform.rotation;
         vertComp = new Vector3(0, -1/Mathf.Tan(verticalClimbAngle), 0);
         source = GetComponent<AudioSource>();
+        dead = false;
     }
     
     // Update is called once per frame
@@ -175,7 +177,7 @@ public class MovementController : MonoBehaviour
 		anim.SetFloat ("curVelocity", totalVelocity);
     }
     
-    void OnCollisionEnter(Collision col)
+    void OnCollisionStay(Collision col)
     {
 		
 		if(Physics.CheckSphere(new Vector3(transform.position.x, transform.position.y + castHeight, transform.position.z), castRadius))
@@ -240,19 +242,27 @@ public class MovementController : MonoBehaviour
     
     public void die()
     {
-        source.Play();
-		anim.SetBool ("death", true);
-        canMove = false;
-        canRotate = false;
-        StartCoroutine(dieWait());
+        if(!dead)
+        {
+            dead = true;
+            source.Play();
+            anim.SetBool ("death", true);
+            canMove = false;
+            canRotate = false;
+            StartCoroutine(dieWait());
+        }
     }
     
     public void crush()
 	{
-		anim.SetBool ("death", true);
-        canMove = false;
-        canRotate = false;
-        StartCoroutine(crushWait());
+        if(!dead)
+        {
+            dead = true;
+            anim.SetBool ("death", true);
+            canMove = false;
+            canRotate = false;
+            StartCoroutine(crushWait());
+        }
     }
     
     public void reset()
@@ -277,12 +287,14 @@ public class MovementController : MonoBehaviour
     IEnumerator dieWait()
     {
         yield return new WaitForSeconds(suffocateTime);
+        dead = false;
         manager.cycle();
     }
     
     IEnumerator crushWait()
     {
         yield return new WaitForSeconds(crushTime);
+        dead = false;
         manager.cycle();
     }
 }
