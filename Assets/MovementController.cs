@@ -18,8 +18,10 @@ public class MovementController : MonoBehaviour
     [SerializeField] private LayerMask castMask;
     [SerializeField] private float interactDistance;
     [SerializeField] private LayerMask interactMask;
-    [SerializeField] private float verticalClimbAngle;
-    
+
+    public bool canMove;
+    public bool hasBucket;
+
     private Quaternion originalRot;
     private Vector3 originalPos;
     private Vector3 targetVel;
@@ -31,23 +33,23 @@ public class MovementController : MonoBehaviour
     private float jumpVel;
 	private Animator anim;
     private  CloneManager manager;
-    private Vector3 vertComp;
-	private PlayerKeys pKeys;
+
+    private InteractControl interactScript;
     
     // Use this for initialization
     void Awake()
     {
-		pKeys = GetComponent<PlayerKeys> ();
 		anim = GetComponent<Animator> ();
         rb = GetComponent<Rigidbody>();
         record = GetComponent<MovementRecord>();
         record.init();
         jumpVel = Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * jumpHeight);
         grounded = false;
+        canMove = true;
+        hasBucket = false;
         targetVel = Vector3.zero;
         originalPos = transform.position;
         originalRot = transform.rotation;
-        vertComp = new Vector3(0, -1/Mathf.Tan(verticalClimbAngle), 0);
     }
     
     // Update is called once per frame
@@ -86,15 +88,22 @@ public class MovementController : MonoBehaviour
         }
         
         byte actions = 0;
-        
-        if(interacting)
+
+        if (!canMove)
         {
-            interact();
-            actions |= 2;
+            targetVel = Vector3.zero;
         }
-        if(jumping)
+        else
         {
-            actions |= 1;
+            if (interacting)
+            {
+                interact();
+                actions |= 2;
+            }
+            if (jumping)
+            {
+                actions |= 1;
+            }
         }
         
         record.addTarget(targetVel, new Vector2(Camera.main.gameObject.transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y), actions);
@@ -121,7 +130,7 @@ public class MovementController : MonoBehaviour
         }
         else if(grounded && difference.sqrMagnitude > maxAccel * maxAccel * Time.fixedDeltaTime * Time.fixedDeltaTime)
         {
-            rb.AddForce((difference.normalized + vertComp) * maxAccel, ForceMode.Acceleration);
+            rb.AddForce(difference.normalized * maxAccel, ForceMode.Acceleration);
         }
         else if(difference.sqrMagnitude > airAccel * airAccel * Time.fixedDeltaTime * Time.fixedDeltaTime)
         {
@@ -138,14 +147,27 @@ public class MovementController : MonoBehaviour
             rb.AddForce(Vector3.up * (jumpVel - rb.velocity.y), ForceMode.VelocityChange);
         }
         jumping = false;
+
 		float totalVelocity = Mathf.Abs(targetVel.x) + Mathf.Abs(targetVel.y) + Mathf.Abs(targetVel.z);
+		//print (grounded);
+
+		if (Input.GetKeyDown (KeyCode.U)) {
+			GameObject testing = GameObject.CreatePrimitive (PrimitiveType.Sphere);
+			Destroy(testing.GetComponent<Rigidbody> ());
+			testing.transform.localScale = testing.transform.localScale * castRadius;
+			print (castHeight);
+			testing.transform.position = new Vector3 (transform.position.x, transform.position.y + castHeight, transform.position.z);
+
+		}
+
+
 		anim.SetFloat ("curVelocity", totalVelocity);
-		print (grounded);
     }
     
-    void OnCollisionStay(Collision col)
+    void OnCollisionEnter(Collision col)
     {
-		if(Physics.CheckSphere(new Vector3(transform.position.x, transform.position.y + castHeight, transform.position.z), castRadius,castMask))
+		
+		if(Physics.CheckSphere(new Vector3(transform.position.x, transform.position.y + castHeight, transform.position.z), castRadius))
         {
             grounded = true;
         }
@@ -172,18 +194,34 @@ public class MovementController : MonoBehaviour
     
     void interact()
     {
-        Ray r = Camera.main.ScreenPointToRay(new Vector3(Camera.main.pixelWidth/2, Camera.main.pixelHeight/2, 0));
-        RaycastHit hit;
-        bool hasHit = Physics.Raycast(r, out hit, interactDistance, interactMask);
-        if(hasHit)
-        {
-            if(hit.collider.gameObject.tag == "Interactable")
+        if (hasBucket) {
+            throwWater();
+        }
+        else{
+            Ray r = Camera.main.ScreenPointToRay(new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2, 0));
+            RaycastHit hit;
+            bool hasHit = Physics.Raycast(r, out hit, interactDistance, interactMask);
+            if (hasHit)
             {
-                hit.collider.gameObject.SendMessage("interact");//temporary
+                if (hit.collider.gameObject.tag == "Interactable")
+                {
+                    hit.collider.gameObject.GetComponent<InteractControl>().doInteraction(this.transform);
+                }
             }
         }
     }
     
+    void throwWater(){
+        Ray r = Camera.main.ScreenPointToRay(new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2, 0));
+        RaycastHit hit;
+        bool hasHit = Physics.Raycast(r, out hit, interactDistance, interactMask);
+        if (hasHit){
+            if(hit.collider.gameObject.tag == "Fire"){
+                hit.collider.gameObject.GetComponent<InteractControl>().doInteraction(this.transform);
+            }
+        }
+        hasBucket = false;
+    }
     
     public void die()
     {
@@ -192,12 +230,12 @@ public class MovementController : MonoBehaviour
     
     public void reset()
     {
-		pKeys.reset ();
         record.clear();
+        canMove = true;
+        hasBucket = false;
         transform.position = originalPos;
         transform.rotation = originalRot;
         rb.velocity = Vector3.zero;
-
     }
     
     public void setManager(CloneManager cloneManager)

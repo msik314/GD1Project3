@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: DebrisTexture_baseColor
+  m_Name: DebrisTexture_baseColor 3
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -39,11 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-<<<<<<< HEAD
-        m_Texture: {fileID: 2800000, guid: eae000c7d86271d4184edda7e9ccf8f3, type: 3}
-=======
-        m_Texture: {fileID: 2800000, guid: cd5ba3f64d959ae47b59a6ebc4e73fb8, type: 3}
->>>>>>> c40d7edba5b52d7b51eac5dcf75d6fc230c8c45b
+        m_Texture: {fileID: 2800000, guid: ea099fcd1a60fcf4594e01a3ad515da6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
