@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerKeys : MonoBehaviour {
 
-	int keyNum;
+	public int keyNum;
 	[SerializeField] GameObject key;
 	[SerializeField] UIScript ui;
 
