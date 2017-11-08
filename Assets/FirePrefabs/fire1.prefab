@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4894224801264602}
   - component: {fileID: 212211061438432172}
   - component: {fileID: 95662830223588106}
+  - component: {fileID: 114895996851414090}
   m_Layer: 0
   m_Name: fire1
   m_TagString: Untagged
@@ -58,6 +59,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114895996851414090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1164228121842950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b621ea0b5c06094a94aad0eab233cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reverse: 0
 --- !u!212 &212211061438432172
 SpriteRenderer:
   m_ObjectHideFlags: 1
