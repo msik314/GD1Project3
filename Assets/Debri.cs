@@ -5,7 +5,7 @@ using UnityEngine;
 public class Debri : InteractControl {
     public Vector3 down;
     public Vector3 up;
-    public int rate;
+    public float rate;
     public float duration;
 
     private bool goingUp = false;
@@ -31,6 +31,7 @@ public class Debri : InteractControl {
                 goingUp = false;
                 goingDown = true;
                 if (isPlayer){
+					
                     user.die();
                     isPlayer = false;
                 }
@@ -52,6 +53,7 @@ public class Debri : InteractControl {
 	}
 
     public override void doInteraction(Transform player){
+
         if (!goingUp && !goingDown){
             goingUp = true;
             if(player.gameObject.tag == "Player")

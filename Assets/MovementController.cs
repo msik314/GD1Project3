@@ -31,7 +31,7 @@ public class MovementController : MonoBehaviour
     private bool jumping;
     private bool interacting;
     private float jumpVel;
-	private Animator anim;
+	public Animator anim;
     private  CloneManager manager;
 
     private InteractControl interactScript;
@@ -202,6 +202,7 @@ public class MovementController : MonoBehaviour
 
 					anim.SetBool ("throwingWater", false);
 					anim.SetBool ("bucket", hasBucket);
+					anim.SetBool ("hasDebris", !canMove);
                 }
             }
         }
@@ -221,11 +222,15 @@ public class MovementController : MonoBehaviour
     
     public void die()
     {
+		anim.SetBool ("DebrisDeath", true);
         manager.cycle();
     }
     
     public void reset()
     {
+		anim.SetBool ("hasDebris", false);
+		anim.SetBool ("DebrisDeath", false);
+		anim.Play ("Idle");
 		GetComponent<PlayerKeys> ().reset ();
         record.clear();
         canMove = true;
