@@ -168,6 +168,7 @@ public class MovementController : MonoBehaviour
 
 
 		anim.SetFloat ("curVelocity", totalVelocity);
+
     }
     
     void OnCollisionEnter(Collision col)
@@ -202,8 +203,8 @@ public class MovementController : MonoBehaviour
     {
         if (hasBucket) {
             throwWater();
+			anim.SetBool ("throwWater", true);
 			anim.SetBool ("bucket", hasBucket);
-
         }
         else{
             Ray r = Camera.main.ScreenPointToRay(new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2, 0));
@@ -215,7 +216,7 @@ public class MovementController : MonoBehaviour
                 {
                     hit.collider.gameObject.GetComponent<InteractControl>().doInteraction(this.transform);
 					anim.SetBool ("bucket", hasBucket);
-					anim.SetBool ("deb", canMove);
+					anim.SetBool ("deb", !canMove);
                 }
             }
         }
@@ -251,7 +252,8 @@ public class MovementController : MonoBehaviour
     
     public void reset()
     {
-
+		anim.SetBool ("bucket", false);
+		anim.SetBool ("deb", false);
 		anim.SetBool ("death", false);
 		anim.Play ("Idle");
         record.clear();
