@@ -124,6 +124,7 @@ ModelImporter:
     4300024: polySurface19
     4300026: polySurface22
     4300028: polySurface14
+    4300030: pCube92
   externalObjects:
   - first:
       type: UnityEngine:Material
