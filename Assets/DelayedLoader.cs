@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DelayedLoader : MonoBehaviour {
+public class DelayedLoader : MonoBehaviour
+{
     [SerializeField] private float loadDelay;
     // Use this for initialization
     int next;
