@@ -10,6 +10,7 @@ public class Debri : InteractControl {
 
     private bool goingUp = false;
     private bool goingDown = false;
+    private MovementController user;
     private float timeStart;
     
     private float i = 0;
@@ -26,6 +27,7 @@ public class Debri : InteractControl {
             if(Time.time - timeStart > duration){
                 goingUp = false;
                 goingDown = true;
+                user.die();
                 i = 0;
             }
         }
@@ -42,6 +44,8 @@ public class Debri : InteractControl {
     public override void doInteraction(Transform player){
         if (!goingUp && !goingDown){
             goingUp = true;
+            user = player.gameObject.GetComponent<MovementController>();
+            user.canMove = false;
             timeStart = Time.time;
         }
 		

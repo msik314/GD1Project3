@@ -27,6 +27,7 @@ public class CloneController : MonoBehaviour
     private Rigidbody rb;
     private Vector3 originalPos;
     private Quaternion originalRot;
+    private bool canMove;
 
     // Use this for initialization
     void Awake()
@@ -49,8 +50,15 @@ public class CloneController : MonoBehaviour
         bool interacting = false;
         byte actions = record.getTarget(out targetVel, out rot);
 
-        jumping = (actions & 1) != 0;
-        interacting = (actions & 2) != 0;
+        if (!canMove)
+        {
+            targetVel = Vector3.zero;
+        }
+        else
+        {
+            jumping = (actions & 1) != 0;
+            interacting = (actions & 2) != 0;
+        }
 
         transform.rotation = rot;
 

@@ -17,7 +17,9 @@ public class MovementController : MonoBehaviour
     [SerializeField] private LayerMask castMask;
     [SerializeField] private float interactDistance;
     [SerializeField] private LayerMask interactMask;
-    
+
+    public bool canMove;
+
     private Quaternion originalRot;
     private Vector3 originalPos;
     private Vector3 targetVel;
@@ -39,6 +41,7 @@ public class MovementController : MonoBehaviour
         record.init();
         jumpVel = Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * jumpHeight);
         grounded = false;
+        canMove = true;
         targetVel = Vector3.zero;
         originalPos = transform.position;
         originalRot = transform.rotation;
@@ -74,15 +77,22 @@ public class MovementController : MonoBehaviour
         }
         
         byte actions = 0;
-        
-        if(interacting)
+
+        if (!canMove)
         {
-            interact();
-            actions |= 2;
+            targetVel = Vector3.zero;
         }
-        if(jumping)
+        else
         {
-            actions |= 1;
+            if (interacting)
+            {
+                interact();
+                actions |= 2;
+            }
+            if (jumping)
+            {
+                actions |= 1;
+            }
         }
         
         record.addTarget(targetVel, transform.rotation, actions);
@@ -178,6 +188,7 @@ public class MovementController : MonoBehaviour
     public void reset()
     {
         record.clear();
+        canMove = true;
         transform.position = originalPos;
         transform.rotation = originalRot;
     }
