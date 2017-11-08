@@ -141,7 +141,7 @@ public class MovementController : MonoBehaviour
 		print (grounded);
     }
     
-    void OnCollisionEnter(Collision col)
+    void OnCollisionStay(Collision col)
     {
 		if(Physics.CheckSphere(new Vector3(transform.position.x, transform.position.y + castHeight, transform.position.z), castRadius,castMask))
         {

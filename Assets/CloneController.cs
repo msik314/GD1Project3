@@ -109,7 +109,7 @@ public class CloneController : MonoBehaviour
 		anim.SetFloat ("curVelocity", totalVelocity);
     }
     
-    void OnCollisionEnter(Collision col)
+    void OnCollisionStay(Collision col)
     {
         if(Physics.CheckSphere(transform.TransformPoint(new Vector3(0, castHeight, 0)), castRadius, castMask))
         {
