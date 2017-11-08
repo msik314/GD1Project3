@@ -133,27 +133,14 @@ public class MovementController : MonoBehaviour
             rb.AddForce(Vector3.up * (jumpVel - rb.velocity.y), ForceMode.VelocityChange);
         }
         jumping = false;
-
 		float totalVelocity = Mathf.Abs(targetVel.x) + Mathf.Abs(targetVel.y) + Mathf.Abs(targetVel.z);
-		print (grounded);
-
-		if (Input.GetKeyDown (KeyCode.U)) {
-			GameObject testing = GameObject.CreatePrimitive (PrimitiveType.Sphere);
-			Destroy(testing.GetComponent<Rigidbody> ());
-			testing.transform.localScale = testing.transform.localScale * castRadius;
-			print (castHeight);
-			testing.transform.position = new Vector3 (transform.position.x, transform.position.y + castHeight, transform.position.z);
-
-		}
-
-
+		print (totalVelocity);
 		anim.SetFloat ("curVelocity", totalVelocity);
     }
     
     void OnCollisionEnter(Collision col)
     {
-		
-		if(Physics.CheckSphere(new Vector3(transform.position.x, transform.position.y + castHeight, transform.position.z), castRadius))
+		if(Physics.CheckSphere(new Vector3(transform.position.x, transform.position.y + castHeight, transform.position.z), castRadius,castMask))
         {
             grounded = true;
         }

@@ -28,10 +28,12 @@ public class CloneController : MonoBehaviour
     private Vector3 originalPos;
     private Quaternion originalRot;
     private Vector2 rot;
-    
+	private Animator anim;
+
     // Use this for initialization
     void Awake()
     {
+		anim = GetComponent<Animator> ();
         rb = GetComponent<Rigidbody>();
         record = GetComponent<MovementRecord>();
         jumpVel = Mathf.Sqrt(2 * Mathf.Abs(Physics.gravity.y) * jumpHeight);
@@ -96,6 +98,11 @@ public class CloneController : MonoBehaviour
             grounded = false;
             rb.AddForce(Vector3.up * (jumpVel - rb.velocity.y), ForceMode.VelocityChange);
         }
+
+
+
+		float totalVelocity = Mathf.Abs(targetVel.x) + Mathf.Abs(targetVel.y) + Mathf.Abs(targetVel.z);
+		anim.SetFloat ("curVelocity", totalVelocity);
     }
     
     void OnCollisionEnter(Collision col)

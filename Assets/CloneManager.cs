@@ -19,7 +19,7 @@ public class CloneManager : MonoBehaviour
     void Awake()
     {
         life = maxLife;
-		life = 9999;
+		life = 99;
         GameObject p = GameObject.FindWithTag("Player");
         playerMr = p.GetComponent<MovementRecord>();
         player = p.GetComponent<MovementController>();
