@@ -15,6 +15,8 @@ public class CloneManager : MonoBehaviour
     [SerializeField]private List <CloneController> ccs;
     private Vector3 originalPos;
     private Quaternion originalRot;
+    
+    private List<InteractControl> interactables;
 
     // Use this for initialization
     void Awake()
@@ -28,6 +30,17 @@ public class CloneManager : MonoBehaviour
         ccs = new List<CloneController>();
         originalPos = player.transform.position;
         originalRot = player.transform.rotation;
+        interactables = new List<InteractControl>();
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("Interactable");
+        foreach(GameObject g in objects)
+        {
+            interactables.Add(g.GetComponent<InteractControl>());
+        }
+        GameObject[] fires = GameObject.FindGameObjectsWithTag("Fire");
+        foreach(GameObject g in fires)
+        {
+            interactables.Add(g.GetComponent<InteractControl>());
+        }
     }
 
     // Update is called once per frame
@@ -42,6 +55,11 @@ public class CloneManager : MonoBehaviour
 
     public void cycle()
     {
+        foreach(InteractControl i in interactables)
+        {
+            i.reset();
+        }
+        
         if(ccs.Count >= livesBeforeReset - 1)
         {
             for(int i = ccs.Count - 1; i >= 0; --i)
@@ -86,6 +104,11 @@ public class CloneManager : MonoBehaviour
 
     public void reset()
     {
+        foreach(InteractControl i in interactables)
+        {
+            i.reset();
+        }
+        
         for(int i = ccs.Count - 1; i >= 0; --i)
         {
             Destroy(ccs[i].gameObject);

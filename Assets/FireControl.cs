@@ -35,7 +35,7 @@ public class FireControl : InteractControl {
         }
     }
 
-    public void reset(){
+    public override void reset(){
         vulnerable = false;
     }
 }

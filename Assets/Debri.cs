@@ -73,7 +73,7 @@ public class Debri : InteractControl {
 		
 	}
 
-    public void reset(){
+    public override void reset(){
         transform.position = down;
         goingUp = false;
         goingDown = true;
