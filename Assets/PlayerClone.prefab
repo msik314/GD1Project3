@@ -2690,6 +2690,7 @@ MonoBehaviour:
   interactMask:
     serializedVersion: 2
     m_Bits: 768
+  verticalClimbAngle: 0
 --- !u!114 &114379058290627138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2701,10 +2702,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 449bc7fa733154141851fe0f66b2936d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 10
+  maxSpeed: 8
   lookSensitivity: 8
   physicsCutoff: 0.5
-  maxAccel: 50
+  maxAccel: 35
   airAccel: 20
   jumpHeight: 1
   castHeight: 0
@@ -2718,6 +2719,7 @@ MonoBehaviour:
     m_Bits: 512
   interactVertOffset: 1.25
   interactCameraDistance: 2.25
+  verticalClimbAngle: 0
 --- !u!114 &114958360036153538
 MonoBehaviour:
   m_ObjectHideFlags: 1

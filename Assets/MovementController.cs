@@ -32,10 +32,12 @@ public class MovementController : MonoBehaviour
 	private Animator anim;
     private  CloneManager manager;
     private Vector3 vertComp;
+	private PlayerKeys pKeys;
     
     // Use this for initialization
     void Awake()
     {
+		pKeys = GetComponent<PlayerKeys> ();
 		anim = GetComponent<Animator> ();
         rb = GetComponent<Rigidbody>();
         record = GetComponent<MovementRecord>();
@@ -190,10 +192,12 @@ public class MovementController : MonoBehaviour
     
     public void reset()
     {
+		pKeys.reset ();
         record.clear();
         transform.position = originalPos;
         transform.rotation = originalRot;
         rb.velocity = Vector3.zero;
+
     }
     
     public void setManager(CloneManager cloneManager)
