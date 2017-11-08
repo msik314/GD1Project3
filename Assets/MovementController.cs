@@ -242,7 +242,7 @@ public class MovementController : MonoBehaviour
     public void die()
     {
         source.Play();
-		anim.SetBool ("death", true);
+		anim.Play("Death");
         canMove = false;
         canRotate = false;
         StartCoroutine(dieWait());
@@ -258,6 +258,7 @@ public class MovementController : MonoBehaviour
     
     public void reset()
     {
+		anim.SetBool ("throwWater", false);
 		anim.SetBool ("bucket", false);
 		anim.SetBool ("deb", false);
         source.Stop();
