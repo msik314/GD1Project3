@@ -39,7 +39,7 @@ public class Bucket : InteractControl {
             gameObject.SetActive(false);
     }
 
-    public void reset(){
+    public override void reset(){
         gameObject.SetActive(true); 
     }
 }

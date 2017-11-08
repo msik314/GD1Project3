@@ -2660,9 +2660,39 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114076142626003520
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1600156557343312}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eedfa8af79d03374b9dede7e9e3d9e64, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  maxSpeed: 10
+  lookSensitivity: 8
+  physicsCutoff: 0.5
+  maxAccel: 50
+  airAccel: 20
+  jumpHeight: 1
+  castHeight: -0
+  castRadius: 0.125
+  castMask:
+    serializedVersion: 2
+    m_Bits: 257
+  interactDistance: 3.25
+  interactMask:
+    serializedVersion: 2
+    m_Bits: 768
+  suffocateTime: 3.09
+  crushTime: 1.08
+  canMove: 0
+  hasBucket: 0
 --- !u!114 &114379058290627138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2672,8 +2702,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 449bc7fa733154141851fe0f66b2936d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   maxSpeed: 8
   lookSensitivity: 8
   physicsCutoff: 0.5
@@ -2691,9 +2721,11 @@ MonoBehaviour:
     m_Bits: 768
   interactVertOffset: 1.25
   interactCameraDistance: 2.25
+  suffocateTime: 0
+  crushTime: 0
   canMove: 0
   hasBucket: 0
-  verticalClimbAngle: 60
+  verticalClimbAngle: 0
 --- !u!114 &114958360036153538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2703,8 +2735,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 276e8bff4cfde714993993bc14ffb7b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!136 &136335367101357678
 CapsuleCollider:
   m_ObjectHideFlags: 1

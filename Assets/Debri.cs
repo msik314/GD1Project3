@@ -31,11 +31,11 @@ public class Debri : InteractControl {
                 goingUp = false;
                 goingDown = true;
                 if (isPlayer){
-                    user.die();
+                    user.crush();
                     isPlayer = false;
                 }
                 else if (isClone){
-                    clone.die();
+                    clone.crush();
                     isClone = false;
                 }
                 i = 0;
@@ -73,7 +73,7 @@ public class Debri : InteractControl {
 		
 	}
 
-    public void reset(){
+    public override void reset(){
         transform.position = down;
         goingUp = false;
         goingDown = true;
