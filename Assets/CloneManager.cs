@@ -7,7 +7,8 @@ public class CloneManager : MonoBehaviour
     [SerializeField] private float maxLife;
     [SerializeField] private GameObject clone;
     [SerializeField] int livesBeforeReset;
-    
+	[SerializeField] private UIScript ui;
+
     private float life;
     private MovementController player;
     private MovementRecord playerMr;
@@ -19,7 +20,7 @@ public class CloneManager : MonoBehaviour
     void Awake()
     {
         life = maxLife;
-
+		ui.setRemainingLives (livesBeforeReset);
         GameObject p = GameObject.FindWithTag("Player");
         playerMr = p.GetComponent<MovementRecord>();
         player = p.GetComponent<MovementController>();
@@ -43,11 +44,11 @@ public class CloneManager : MonoBehaviour
     {
         if(ccs.Count >= livesBeforeReset - 1)
         {
-
             for(int i = ccs.Count - 1; i >= 0; --i)
             {
                 Destroy(ccs[i].gameObject);
             }
+			ui.setRemainingLives (livesBeforeReset);
             clear();
         }
         else
@@ -59,6 +60,7 @@ public class CloneManager : MonoBehaviour
             GameObject c = (GameObject)Instantiate(clone, originalPos, originalRot);
             c.GetComponent<MovementRecord>().copy(playerMr);
             ccs.Add(c.GetComponent<CloneController>());
+			ui.setRemainingLives (livesBeforeReset - ccs.Count);
         }
         player.reset();
         life = maxLife;
@@ -70,6 +72,11 @@ public class CloneManager : MonoBehaviour
 
 	public float getMaxLife(){
 		return maxLife;
+	}
+
+	public int getLivesLeft()
+	{
+		return livesBeforeReset-ccs.Count;
 	}
     
     void clear()

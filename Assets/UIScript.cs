@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIScript : MonoBehaviour {
 
@@ -9,10 +10,13 @@ public class UIScript : MonoBehaviour {
 	private int border = 20;
 	private int curKeyNum = 0;
 	private List<GameObject> keys;
+	private Text lifeText;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		keys = new List<GameObject> ();
+		lifeText = lives.GetComponentInChildren<Text> ();
+	
 		textBox.transform.position = new Vector3 (Screen.width/2 - border, Screen.height - textBox.GetComponent<RectTransform>().rect.height/2 - border, 0);
 
 		lifeSpan.transform.position = new Vector3 (Screen.width - lifeSpan.GetComponent<RectTransform>().rect.width/2 - border, 
@@ -32,6 +36,9 @@ public class UIScript : MonoBehaviour {
 	public void noMoreKeys(){
 		curKeyNum = 0;
 		loadKeys ();
+	}
+	public void setRemainingLives(int life){
+		lifeText.text = "x" + life;
 	}
 	private void loadKeys(){
 		for (int i = 0; i < curKeyNum; i++) {
