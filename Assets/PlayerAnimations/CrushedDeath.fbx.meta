@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: ae8b2b2052e11f547acc4cd10f9b21c0
-timeCreated: 1510116068
-=======
-guid: f0062b990cd80e645bed30a1ee1e002b
-timeCreated: 1510116308
->>>>>>> c40d7edba5b52d7b51eac5dcf75d6fc230c8c45b
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -204,11 +197,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
-<<<<<<< HEAD
-    second: {fileID: 2100000, guid: e48b45cd775a10941a6ed5779b4a09f4, type: 2}
-=======
-    second: {fileID: 2100000, guid: afe1a31fea89e97489394bf040e28cb1, type: 2}
->>>>>>> c40d7edba5b52d7b51eac5dcf75d6fc230c8c45b
+    second: {fileID: 2100000, guid: 0ef103d79a3a6e74092195c5ed6fbc13, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

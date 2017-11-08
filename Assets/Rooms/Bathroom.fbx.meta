@@ -1,133 +1,14 @@
 fileFormatVersion: 2
 guid: dd748a7d7273323478b540dfd82cee3f
-timeCreated: 1509569162
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: pCube91
-    100004: polySurface1
-    100006: polySurface10
-    100008: polySurface11
-    100010: polySurface12
-    100012: polySurface13
-    100014: polySurface14
-    100016: polySurface14 1
-    100018: polySurface15
-    100020: polySurface16
-    100022: polySurface17
-    100024: polySurface18
-    100026: polySurface19
-    100028: polySurface2
-    100030: polySurface20
-    100032: polySurface21
-    100034: polySurface22
-    100036: polySurface22 1
-    100038: polySurface3
-    100040: polySurface4
-    100042: polySurface5
-    100044: polySurface6
-    100046: polySurface7
-    100048: polySurface8
-    100050: polySurface9
-    100052: transform1
-    100054: transform10
-    100056: transform11
-    100058: transform2
-    100060: transform3
-    100062: transform4
-    100064: transform5
-    100066: transform6
-    100068: transform7
-    100070: transform8
-    100072: transform9
     400000: //RootNode
-    400002: pCube91
-    400004: polySurface1
-    400006: polySurface10
-    400008: polySurface11
-    400010: polySurface12
-    400012: polySurface13
-    400014: polySurface14
-    400016: polySurface14 1
-    400018: polySurface15
-    400020: polySurface16
-    400022: polySurface17
-    400024: polySurface18
-    400026: polySurface19
-    400028: polySurface2
-    400030: polySurface20
-    400032: polySurface21
-    400034: polySurface22
-    400036: polySurface22 1
-    400038: polySurface3
-    400040: polySurface4
-    400042: polySurface5
-    400044: polySurface6
-    400046: polySurface7
-    400048: polySurface8
-    400050: polySurface9
-    400052: transform1
-    400054: transform10
-    400056: transform11
-    400058: transform2
-    400060: transform3
-    400062: transform4
-    400064: transform5
-    400066: transform6
-    400068: transform7
-    400070: transform8
-    400072: transform9
     2300000: //RootNode
-    2300002: polySurface1
-    2300004: polySurface10
-    2300006: polySurface14
-    2300008: polySurface15
-    2300010: polySurface16
-    2300012: polySurface17
-    2300014: polySurface18
-    2300016: polySurface19
-    2300018: polySurface22
-    2300020: polySurface5
-    2300022: polySurface6
-    2300024: polySurface7
-    2300026: polySurface8
-    2300028: polySurface9
     3300000: //RootNode
-    3300002: polySurface1
-    3300004: polySurface10
-    3300006: polySurface14
-    3300008: polySurface15
-    3300010: polySurface16
-    3300012: polySurface17
-    3300014: polySurface18
-    3300016: polySurface19
-    3300018: polySurface22
-    3300020: polySurface5
-    3300022: polySurface6
-    3300024: polySurface7
-    3300026: polySurface8
-    3300028: polySurface9
-    4300000: pCube91
-    4300002: polySurface1
-    4300004: polySurface5
-    4300006: polySurface6
-    4300008: polySurface7
-    4300010: polySurface8
-    4300012: polySurface9
-    4300014: polySurface10
-    4300016: polySurface15
-    4300018: polySurface16
-    4300020: polySurface17
-    4300022: polySurface18
-    4300024: polySurface19
-    4300026: polySurface22
-    4300028: polySurface14
-<<<<<<< HEAD
-=======
-    4300030: pCube92
->>>>>>> c40d7edba5b52d7b51eac5dcf75d6fc230c8c45b
+    4300000: pCube92
+    9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -210,7 +91,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
