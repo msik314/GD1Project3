@@ -20,6 +20,7 @@ public class FireControl : InteractControl {
             {
                 print("resetting");
                 vulnerable = false;
+                GetComponentInChildren<Animator>().SetBool("falter", false);
             }
         }
 	}
@@ -28,10 +29,12 @@ public class FireControl : InteractControl {
         if(!vulnerable){
             print("setting");
             vulnerable = true;
+            GetComponentInChildren<Animator>().SetBool("falter", true);
             startTime = Time.time;
         }
         else if (vulnerable){
             print("out");
+            gameObject.SetActive(false);
         }
     }
 
