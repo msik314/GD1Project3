@@ -1710,7 +1710,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1947345208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 700.5, y: 394, z: 0}
+  m_LocalPosition: {x: 447.5, y: 227, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1521097181}
@@ -1873,6 +1873,20 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 6b16b0a2d87f07243a9c2f9c1cc900f7, type: 3}
   m_PrefabInternal: {fileID: 1297420750}
+--- !u!114 &2051572213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2051572211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 979dc17d2a8ac154380ad4da35245f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookAt: {fileID: 0}
+  distance: 10
+  verticalOffset: 0
 --- !u!64 &2051572215
 MeshCollider:
   m_ObjectHideFlags: 0

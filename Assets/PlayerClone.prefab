@@ -2691,8 +2691,8 @@ MonoBehaviour:
     m_Bits: 768
   interactVertOffset: 1.25
   interactCameraDistance: 2.25
-  suffocateTime: 0
-  crushTime: 0
+  suffocateTime: 3.09
+  crushTime: 1.08
   canMove: 0
   hasBucket: 0
   verticalClimbAngle: 60

@@ -51,6 +51,9 @@ public class CloneManager : MonoBehaviour
         life -= Time.deltaTime;
         if(life <= 0 && !hasFired)
         {
+			
+			for (int i = ccs.Count - 1; i >= 0; --i)
+				ccs [i].die ();
             player.die();
             hasFired = true;
         }
