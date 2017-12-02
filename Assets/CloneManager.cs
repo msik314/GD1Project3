@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CloneManager : MonoBehaviour
 {
@@ -68,12 +69,15 @@ public class CloneManager : MonoBehaviour
         
         if(ccs.Count >= livesBeforeReset - 1)
         {
-            for(int i = ccs.Count - 1; i >= 0; --i)
-            {
-                Destroy(ccs[i].gameObject);
-            }
-			ui.setRemainingLives (livesBeforeReset);
-            clear();
+//             for(int i = ccs.Count - 1; i >= 0; --i)
+//             {
+//                 Destroy(ccs[i].gameObject);
+//             }
+// 			ui.setRemainingLives (livesBeforeReset);
+//             clear();
+            
+             int scene = SceneManager.GetActiveScene().buildIndex;
+             SceneManager.LoadScene(scene);
         }
         else
         {
